@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 01/27/2023 12:29:40 AM
+// Create Date: 01/27/2023 12:39:44 AM
 // Design Name: 
-// Module Name: immediate_data_gen
+// Module Name: control_unit
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,15 +20,17 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module immediate_data_gen(
+module control_unit(
     input clk,
-    input [31:0] instructuin_data_in,
-    output reg [63:0] immediate_data_out
+    input [7:0] opcode,
+    output branch,
+    output mem_read,
+    output mem_to_reg,
+    output ALU_op,
+    output mem_write,
+    output ALU_Src,
+    output reg_write
     );
     
-    always @(posedge clk)
-        begin
-            immediate_data_out<= {instructuin_data_in,32'b0}; //set the proper bit pattern
-        end
-        
+    //write control unit
 endmodule

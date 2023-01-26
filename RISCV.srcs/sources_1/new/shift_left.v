@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 01/27/2023 12:29:40 AM
+// Create Date: 01/27/2023 12:42:31 AM
 // Design Name: 
-// Module Name: immediate_data_gen
+// Module Name: shift_left
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,15 +20,14 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module immediate_data_gen(
+module shift_left(
     input clk,
-    input [31:0] instructuin_data_in,
-    output reg [63:0] immediate_data_out
+    input [63:0] immediate_data_in,
+    output reg [63:0] out   // adjust the output width
     );
     
-    always @(posedge clk)
+    always@(posedge clk)
         begin
-            immediate_data_out<= {instructuin_data_in,32'b0}; //set the proper bit pattern
+        //out <= write the logic here  ; 
         end
-        
 endmodule
