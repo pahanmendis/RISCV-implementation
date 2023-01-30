@@ -1,0 +1,16 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Jan 30 09:29:54 2023
+# Process ID: 12936
+# Current directory: C:/Users/Chathuni/Documents/GitHub/RISCV-implementation
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent344 C:\Users\Chathuni\Documents\GitHub\RISCV-implementation\RISCV.xpr
+# Log file: C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/vivado.log
+# Journal file: C:/Users/Chathuni/Documents/GitHub/RISCV-implementation\vivado.jou
+# Running On: Asus-Skye, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 16, Host memory: 33720 MB
+#-----------------------------------------------------------
+start_gui
+open_project -read_only C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.xpr
+update_compile_order -fileset sources_1
+save_project_as project_1 C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/Local/project_1 -force

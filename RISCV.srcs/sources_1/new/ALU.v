@@ -24,22 +24,29 @@ module ALU(
     input clk,
     input [63:0] A,
     input [63:0] B,
-    input [3:0] ALU_control,
+    input [3:0] Opcode,
     output reg z_flag,
     output reg [63:0] out
     );
     
-    //define the control signal pattern as parameters
-    parameter ADD = 4'b0001;
-    parameter LSHIFT1 = 4'b0010;
-    parameter RSHIFT1 = 4'b0011;
-    parameter LSHIFT8 = 4'b0100;
-    parameter DEAC = 4'b0101;
-    parameter RESET = 4'b0110;
-    parameter PASS_B = 4'b0111;
-    parameter PASS_A = 4'b1000;
-    parameter SUB = 4'b1001;
-    parameter INCAC = 4'b1011;
+    // define the control signal pattern as parameters
+    parameter ADDITION = 5'b00000;          // A+B
+    parameter SUBTRACTION = 5'b00001;       // A-B
+    parameter L_SHIFT_RIGHT = 5'b00010;     // Right shift A by LSB 5 bits of B
+    parameter A_SHIFT_RIGHT = 5'b00011;     // Right shift A by LSB 5 bits OF B -> Keep MSB intact
+    parameter L_SHIFT_LEFT = 5'b00100;      // Left shift A by LSB 5 bits of B
+    parameter XOR = 5'b00101;               // A XOR B
+    parameter AND = 5'b00110;               // A AND B
+    parameter OR = 5'b00111;                // A OR B
+    parameter CHECK_EQUAL = 5'b01000;       // A == B?  Z = 1 : P = 1, N = 1
+    parameter CHECK_LESS_S = 5'b01001;      // A < B? N = 1 : P = 0, N = 0, signed
+    parameter CHECK_GREATER_S = 5'b01010;   // A > B? N = 1 : P = 0, N = 0, signed
+    parameter SET_LESS = 5'b01011;          // A < B? Out = 1 : Out = 0, signed
+    parameter SET_LESS_U = 5'b01100;        // A < B? Out = 1 : Out = 0, signed
+    parameter JUMP_LINK = 5'b01101;         // A+B; set LSB to 0
+    parameter ADDI = 5'b01110;              // A+B
+    parameter CHECK_LESS_U = 5'b01111;      // A < B? N = 1 : P = 0, N = 0, unsigned
+    parameter CHECK_GREATER_U = 5'b10000;   // A > B? N = 1 : P = 0, N = 0, unsigned
 
     //events performed at positive edge
     
