@@ -39,16 +39,24 @@ module data_mem(
     
     always@(posedge MEM_clk)                    //output data
         begin
-        read_data<=data_ram[data_address];
+        if (mem_read==2'b01)
+            read_data<={24'd0,data_ram[data_address][7:0]};
+        else if (mem_read==2'b10)
+            read_data<={16'd0,data_ram[data_address][15:0]};
+        else if (mem_read==2'b11)
+            read_data<=data_ram[data_address];  
+        else 
+            read_data<=read_data;          
         end
 
     always@(posedge MEM_clk)                    //output data
         begin
-        if (mem_write==2'b11)      //check logic to write to data mem
-            begin
+        if (mem_write==2'b01)      //check logic to write to data mem
+                data_ram[data_address]<={24'd0,write_data[7:0]};
+        else if (mem_write==2'b10)      //check logic to write to data mem
+                data_ram[data_address]<={16'd0,write_data[15:0]};
+        else if (mem_write==2'b11)      //check logic to write to data mem
                 data_ram[data_address]<=write_data;
-                read_data<=31'd0;
-            end
         end
     
 endmodule
