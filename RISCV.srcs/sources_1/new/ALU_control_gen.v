@@ -22,6 +22,6 @@
 
 module ALU_control_gen(
     input [31:0] intruction,
-    output reg [4:0] ALU_op,
+    output reg [4:0] ALU_op
     );
 endmodule
