@@ -30,7 +30,25 @@ module immediate_data_gen(
     
     always @(posedge ID_clk)
         begin
-            imm_data<= instruction_in; //set the proper bit pattern
+            case ({extend,im_slice})
+            5'b10001:
+                imm_data<={instruction_in[31:12],12'd0};
+            5'b01010:
+                imm_data<={{13{instruction_in[31]}},instruction_in[19:12],instruction_in[20],instruction_in[30:21]};
+            5'b01011:
+                imm_data<={{20{instruction_in[31]}},instruction_in[31:20]};
+            5'b10011:
+                imm_data<={20'd0,instruction_in[31:20]};
+            5'b10100:
+                imm_data<={20'd0, instruction_in[31], instruction_in[7], instruction_in[30:25], instruction_in[11:8]};
+            5'b01101:
+                imm_data<={{20{instruction_in[31]}}, instruction_in[31:25], instruction_in[ 11:7]};
+            5'b00110:
+                imm_data<={27'd0, instruction_in[24:20]};
+            default:
+                imm_data<=32'd0;
+            endcase
+                
         end
         
 endmodule
