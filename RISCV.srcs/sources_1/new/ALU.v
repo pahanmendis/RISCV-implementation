@@ -24,7 +24,7 @@ module ALU(
     input EX_clk,
     input [31:0] A,
     input [31:0] B,
-    input [4:0] Opcode,
+    input [4:0] ALU_op,
     output reg z_flag,
     output reg p_flag,
     output reg n_flag,
