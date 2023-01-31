@@ -21,14 +21,16 @@
 
 
 module immediate_data_gen(
-    input clk,
-    input [31:0] instructuin_data_in,
-    output reg [63:0] immediate_data_out
+    input ID_clk,
+    input [1:0] extend,
+    input [2:0] im_slice,
+    input [31:0] instruction_in,
+    output reg [31:0] imm_data
     );
     
-    always @(posedge clk)
+    always @(posedge ID_clk)
         begin
-            immediate_data_out<= {instructuin_data_in,32'b0}; //set the proper bit pattern
+            imm_data<= instruction_in; //set the proper bit pattern
         end
         
 endmodule
