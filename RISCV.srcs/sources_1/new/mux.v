@@ -21,14 +21,13 @@
 
 
 module mux_64(
-    input clk,
-    input [63:0] A, //output value if sel=0
-    input [63:0] B, //output value if sel=1
+    input [31:0] A, //output value if sel=0
+    input [31:0] B, //output value if sel=1
     input sel,
-    output reg [63:0] out
+    output reg [31:0] out
     );
     
-    always @(posedge clk)
+    always @(*)
     begin
         if (sel==1'b0)
             out<= A;
