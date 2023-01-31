@@ -21,9 +21,7 @@
 
 
 module ALU_control_gen(
-    input clk,
-    input [3:0] intruction,
-    input [2:0] ALU_op,
-    output [3:0] ALU_sig
+    input [31:0] intruction,
+    output reg [4:0] ALU_op,
     );
 endmodule
