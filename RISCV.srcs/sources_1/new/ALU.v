@@ -63,38 +63,45 @@ module ALU(
     //writing ALU functions
     always @(posedge EX_clk) 
     begin
-//        case(ALU_control)
-//        ADD:
-//            out<=A+B;
-//        SUB:
-//            begin
-//            out<=A-B;
-//            if (out==28'b0)
-//                z_flag = 1'b1;
-//            else
-//                z_flag = 1'b0;
-//             end
-//        PASS_A:
-//            out<=A;
-//        PASS_B:
-//            out<=B;
-//        INCAC:
-//            out<=A+1;
-//        DEAC:
-//            out<=A-1;
-//        LSHIFT1:
-//            out<=A<<1;
-//        LSHIFT8:
-//            out<=A<<8;   
-//        RSHIFT1:
-//            out<=A>>1;
-//        RESET:
-//            out<=24'b0;
-//        default:
-//            out<=24'b0;
+        case(ALU_op)
+        ADDITION:
+            out<=A+B;
+        SUBTRACTION:
+            begin
+            out<=A-B;
+            if (out==32'b0)
+                z_flag = 1'b1;
+            else
+                z_flag = 1'b0;
+             end
+        L_SHIFT_RIGHT:
+            out<=A<<B[4:0];
+        A_SHIFT_RIGHT:
+            out<={A[31],A[30:0]<<B[4:0]};
+        L_SHIFT_LEFT:
+            out<=A>>B[4:0];
+        XOR:
+            out<=A^B;
+        AND:
+            out<=A&B;
+        OR:
+            out<=A|B;   
+        CHECK_EQUAL:
+            begin
+            out<=A-B;
+            if (out==32'b0)
+                begin
+                z_flag = 1'b1;
+                end
+            else
+                z_flag = 1'b0;
+             end
+
+        default:
+            out<=24'b0;
             
             
-//        endcase       
+        endcase       
     end    
 
 endmodule
