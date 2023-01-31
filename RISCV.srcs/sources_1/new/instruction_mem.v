@@ -21,8 +21,8 @@
 
 
 module instruction_mem(
-    input clk,
-    input [31:0] read_address,
+    input IF_clk,
+    input [31:0] instruction_address,
     output reg [31:0] instruction
     );
     parameter instruction_count = 200;         //set instruction count
@@ -33,9 +33,9 @@ module instruction_mem(
     parameter NOOP = 8'd3;
     parameter LDX1R1 = 8'd9;   
        
-    always @(posedge clk)
+    always @(posedge IF_clk)
         begin
-         instruction<=instruction_rom[read_address]; 
+         instruction<=instruction_rom[instruction_address]; 
         end
         
     initial 
