@@ -21,12 +21,14 @@
 
 
 module ALU(
-    input clk,
-    input [63:0] A,
-    input [63:0] B,
-    input [3:0] Opcode,
+    input EX_clk,
+    input [31:0] A,
+    input [31:0] B,
+    input [4:0] Opcode,
     output reg z_flag,
-    output reg [63:0] out
+    output reg p_flag,
+    output reg n_flag,
+    output reg [31:0] out
     );
     
     // define the control signal pattern as parameters
@@ -54,43 +56,45 @@ module ALU(
         begin
             out = 24'b0;
             z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
         end
     
     //writing ALU functions
-    always @(posedge clk) 
+    always @(posedge EX_clk) 
     begin
-        case(ALU_control)
-        ADD:
-            out<=A+B;
-        SUB:
-            begin
-            out<=A-B;
-            if (out==28'b0)
-                z_flag = 1'b1;
-            else
-                z_flag = 1'b0;
-             end
-        PASS_A:
-            out<=A;
-        PASS_B:
-            out<=B;
-        INCAC:
-            out<=A+1;
-        DEAC:
-            out<=A-1;
-        LSHIFT1:
-            out<=A<<1;
-        LSHIFT8:
-            out<=A<<8;   
-        RSHIFT1:
-            out<=A>>1;
-        RESET:
-            out<=24'b0;
-        default:
-            out<=24'b0;
+//        case(ALU_control)
+//        ADD:
+//            out<=A+B;
+//        SUB:
+//            begin
+//            out<=A-B;
+//            if (out==28'b0)
+//                z_flag = 1'b1;
+//            else
+//                z_flag = 1'b0;
+//             end
+//        PASS_A:
+//            out<=A;
+//        PASS_B:
+//            out<=B;
+//        INCAC:
+//            out<=A+1;
+//        DEAC:
+//            out<=A-1;
+//        LSHIFT1:
+//            out<=A<<1;
+//        LSHIFT8:
+//            out<=A<<8;   
+//        RSHIFT1:
+//            out<=A>>1;
+//        RESET:
+//            out<=24'b0;
+//        default:
+//            out<=24'b0;
             
             
-        endcase       
+//        endcase       
     end    
 
 endmodule
