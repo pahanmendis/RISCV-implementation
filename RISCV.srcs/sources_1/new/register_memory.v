@@ -21,30 +21,31 @@
 
 
 module register_memory(
-    input clk,
+    input ID_clk,
+    input WB_clk,
     input reg_write,
-    input [5:0] read_reg1_addr,
-    input [5:0] read_reg2_addr,
-    input [5:0] write_reg_addr,
-    input [63:0] write_data,
-    output reg [63:0] reg1_out,
-    output reg [63:0] reg2_out
+    input [4:0] rs1_addr,
+    input [4:0] rs2_addr,
+    input [4:0] rd_addr,
+    input [31:0] write_data,
+    output reg [31:0] rs1_data,
+    output reg [31:0] rs2_data
     );
     
     parameter reg_count = 31; //n-1
-    reg [63:0] reg_ram [reg_count:0];
+    reg [31:0] reg_ram [reg_count:0];
     
-    always @(posedge clk)    //output reg data to port 1 and port 2
+    always @(posedge ID_clk)    //output reg data to port 1 and port 2
         begin
-            reg1_out<=reg_ram[read_reg1_addr];
-            reg2_out<=reg_ram[read_reg2_addr];  
+            rs1_data<=reg_ram[rs1_addr];
+            rs2_data<=reg_ram[rs2_addr];  
         end
     
-    always @(posedge clk)
+    always @(posedge WB_clk)
         begin
             if(reg_write==1'b1)     //writing to destination reg ***check the logic is 1 or 0 to write
                 begin
-                    reg_ram[write_reg_addr] <=write_data;
+                    reg_ram[rd_addr] <=write_data;
                 end
         end
 endmodule
