@@ -2,16 +2,15 @@
 # Vivado v2021.2 (64-bit)
 # SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
 # IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
-# Start of session at: Wed Feb  1 17:16:13 2023
-# Process ID: 18212
+# Start of session at: Mon Jan 30 09:29:54 2023
+# Process ID: 12936
 # Current directory: C:/Users/Chathuni/Documents/GitHub/RISCV-implementation
-# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent19240 C:\Users\Chathuni\Documents\GitHub\RISCV-implementation\RISCV.xpr
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent344 C:\Users\Chathuni\Documents\GitHub\RISCV-implementation\RISCV.xpr
 # Log file: C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/vivado.log
 # Journal file: C:/Users/Chathuni/Documents/GitHub/RISCV-implementation\vivado.jou
 # Running On: Asus-Skye, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 16, Host memory: 33720 MB
 #-----------------------------------------------------------
 start_gui
-open_project C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.xpr
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kc705:part0:1.6 available at D:/Programs/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kc705/1.6/board.xml as part xc7k325tffg900-2 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.6 available at D:/Programs/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.6/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:kcu105:part0:1.7 available at D:/Programs/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/kcu105/1.7/board.xml as part xcku040-ffva1156-2-e specified in board_part file is either invalid or not available
@@ -57,91 +56,17 @@ WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216_es:part0:1.2 avai
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld:part0:2.0 available at D:/Programs/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/production/2.0/board.xml as part xczu59dr-ffvf1760-2-i specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu216ld_es:part0:1.0 available at D:/Programs/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu216ld/es/1.0/board.xml as part xczu59dr-ffvf1760-2-i-es1 specified in board_part file is either invalid or not available
 WARNING: [Board 49-26] cannot add Board Part xilinx.com:zcu670:part0:1.0 available at D:/Programs/Vivado/2021.2/data/xhub/boards/XilinxBoardStore/boards/Xilinx/zcu670/1.0/board.xml as part xczu67dr-fsve1156-2-i specified in board_part file is either invalid or not available
+open_project -read_only C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.xpr
 INFO: [Project 1-313] Project file moved from 'E:/Work/RTL/CSD23 RISCV/RISCV' since last save.
-INFO: [filemgmt 56-2] Default IP Output Path : Could not find the directory 'C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.gen/sources_1', nor could it be found using path 'E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.gen/sources_1'.
 WARNING: [filemgmt 56-2] IPUserFilesDir: Could not find the directory 'C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.ip_user_files', nor could it be found using path 'E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.ip_user_files'.
 Scanning sources...
 Finished scanning sources
+CRITICAL WARNING: [Board 49-67] The board_part definition was not found for em.avnet.com:zed:part0:1.4. This can happen sometimes when you use custom board part. You can resolve this issue by setting 'board.repoPaths' parameter, pointing to the location of custom board files. Valid board_part values can be retrieved with the 'get_board_parts' Tcl command.
+WARNING: [Project 1-229] Project 'RISCV.xpr' is read-only and therefore could not be upgraded for this version of Vivado.  Use 'File | Save Project As...' if you wish to save an upgraded copy.
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'D:/Programs/Vivado/2021.2/data/ip'.
-open_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:10 . Memory (MB): peak = 1244.965 ; gain = 0.000
 update_compile_order -fileset sources_1
-check_syntax
-CRITICAL WARNING: [HDL 9-806] Syntax error near "[". [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:170]
-check_syntax
-INFO: [Vivado 12-4796] No errors or warning reported.
-check_syntax
-INFO: [Vivado 12-4796] No errors or warning reported.
-check_syntax
-INFO: [Vivado 12-4796] No errors or warning reported.
-check_syntax
-INFO: [Vivado 12-4796] No errors or warning reported.
-check_syntax
-INFO: [Vivado 12-4796] No errors or warning reported.
-check_syntax
-CRITICAL WARNING: [HDL 9-806] Syntax error near ":". [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:88]
-CRITICAL WARNING: [HDL 9-3081] 'XOR' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:91]
-INFO: [HDL 9-3800] previous declaration of 'XOR' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:40]
-CRITICAL WARNING: [HDL 9-3081] 'AND' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:94]
-INFO: [HDL 9-3800] previous declaration of 'AND' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:41]
-CRITICAL WARNING: [HDL 9-3081] 'OR' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:96]
-INFO: [HDL 9-3800] previous declaration of 'OR' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:42]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_EQUAL' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:99]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_EQUAL' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:43]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_LESS_S' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:116]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_LESS_S' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:44]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_GREATER_S' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:133]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_GREATER_S' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:45]
-CRITICAL WARNING: [HDL 9-3081] 'SET_LESS' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:150]
-INFO: [HDL 9-3800] previous declaration of 'SET_LESS' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:46]
-CRITICAL WARNING: [HDL 9-3081] 'SET_LESS_U' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:160]
-INFO: [HDL 9-3800] previous declaration of 'SET_LESS_U' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:47]
-CRITICAL WARNING: [HDL 9-3081] 'JUMP_LINK' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:169]
-INFO: [HDL 9-3800] previous declaration of 'JUMP_LINK' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:48]
-CRITICAL WARNING: [HDL 9-3081] 'ADDI' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:172]
-INFO: [HDL 9-3800] previous declaration of 'ADDI' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:49]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_LESS_U' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:176]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_LESS_U' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:50]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_GREATER_U' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:194]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_GREATER_U' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:51]
-CRITICAL WARNING: [HDL 9-806] Syntax error near "default". [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:211]
-CRITICAL WARNING: [HDL 9-2948] Verilog 2000 keyword default used in incorrect context [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:211]
-CRITICAL WARNING: [HDL 9-806] Syntax error near "endcase". [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:214]
-CRITICAL WARNING: [HDL 9-2948] Verilog 2000 keyword endcase used in incorrect context [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:214]
-check_syntax
-CRITICAL WARNING: [HDL 9-806] Syntax error near ":". [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:88]
-CRITICAL WARNING: [HDL 9-3081] 'XOR' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:91]
-INFO: [HDL 9-3800] previous declaration of 'XOR' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:40]
-CRITICAL WARNING: [HDL 9-3081] 'AND' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:94]
-INFO: [HDL 9-3800] previous declaration of 'AND' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:41]
-CRITICAL WARNING: [HDL 9-3081] 'OR' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:96]
-INFO: [HDL 9-3800] previous declaration of 'OR' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:42]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_EQUAL' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:99]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_EQUAL' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:43]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_LESS_S' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:116]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_LESS_S' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:44]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_GREATER_S' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:133]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_GREATER_S' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:45]
-CRITICAL WARNING: [HDL 9-3081] 'SET_LESS' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:150]
-INFO: [HDL 9-3800] previous declaration of 'SET_LESS' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:46]
-CRITICAL WARNING: [HDL 9-3081] 'SET_LESS_U' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:160]
-INFO: [HDL 9-3800] previous declaration of 'SET_LESS_U' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:47]
-CRITICAL WARNING: [HDL 9-3081] 'JUMP_LINK' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:169]
-INFO: [HDL 9-3800] previous declaration of 'JUMP_LINK' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:48]
-CRITICAL WARNING: [HDL 9-3081] 'ADDI' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:172]
-INFO: [HDL 9-3800] previous declaration of 'ADDI' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:49]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_LESS_U' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:176]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_LESS_U' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:50]
-CRITICAL WARNING: [HDL 9-3081] 'CHECK_GREATER_U' is already declared [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:194]
-INFO: [HDL 9-3800] previous declaration of 'CHECK_GREATER_U' is from here [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:51]
-CRITICAL WARNING: [HDL 9-806] Syntax error near "default". [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:211]
-CRITICAL WARNING: [HDL 9-2948] Verilog 2000 keyword default used in incorrect context [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:211]
-CRITICAL WARNING: [HDL 9-806] Syntax error near "endcase". [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:214]
-CRITICAL WARNING: [HDL 9-2948] Verilog 2000 keyword endcase used in incorrect context [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:214]
-check_syntax
-INFO: [Vivado 12-4796] No errors or warning reported.
-check_syntax
-INFO: [Vivado 12-4796] No errors or warning reported.
+save_project_as project_1 C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/Local/project_1 -force
 exit
-INFO: [Common 17-206] Exiting Vivado at Wed Feb  1 20:34:55 2023...
+INFO: [Common 17-206] Exiting Vivado at Mon Jan 30 17:48:10 2023...
