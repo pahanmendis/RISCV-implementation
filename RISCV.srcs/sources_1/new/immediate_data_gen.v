@@ -40,7 +40,7 @@ module immediate_data_gen(
             5'b10011:
                 imm_data<={20'd0,instruction_in[31:20]};
             5'b10100:
-                imm_data<={20'd0, instruction_in[31], instruction_in[7], instruction_in[30:25], instruction_in[11:8]};
+                imm_data<={18'd0, instruction_in[31], instruction_in[7], instruction_in[30:25], instruction_in[11:8],2'd0};
             5'b01101:
                 imm_data<={{20{instruction_in[31]}}, instruction_in[31:25], instruction_in[ 11:7]};
             5'b00110:

@@ -21,13 +21,13 @@
 
 
 module Adder_4(
-    input clk,
-    input [63:0] PC_in,   //define proper bus widths
-    output reg [63:0] sum
+    input MEM_clk,
+    input [31:0] PC_in,   //define proper bus widths
+    output reg [31:0] sum
     );
     
-    always@(posedge clk)
+    always@(posedge MEM_clk)
         begin
-        sum<= PC_in + 64'd4; // **check if we need to include overflow failsafes
+        sum <= PC_in + 32'd4; // **check if we need to include overflow failsafes
         end
 endmodule

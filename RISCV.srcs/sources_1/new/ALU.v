@@ -82,7 +82,10 @@ module ALU(
             out <= A >> B[4:0];
             
         A_SHIFT_RIGHT:
-            out <= {A[31], A[30:0] >> B[4:0]};
+            begin
+            temp <= A >> B[4:0];
+            out <= {A[31], temp[30:0]};
+            end
             
         L_SHIFT_LEFT:
             out <= A << B[4:0];
@@ -97,8 +100,7 @@ module ALU(
               
         CHECK_EQUAL:
             begin
-            out <= A - B;
-            if (out == 32'b0)
+            if (A == B)
                 begin
                 z_flag = 1'b1;
                 p_flag = 1'b0;
@@ -114,8 +116,7 @@ module ALU(
             
         CHECK_LESS_S:
             begin
-            out <= A - B;
-            if (out < 32'b0)
+            if (A < B)
                 begin
                 z_flag = 1'b0;
                 p_flag = 1'b0;
@@ -131,8 +132,7 @@ module ALU(
             
         CHECK_GREATER_S:
             begin
-            out <= A - B;
-            if (out > 32'b0)
+            if (A > B)
                 begin
                 z_flag = 1'b0;
                 p_flag = 1'b1;
@@ -158,8 +158,7 @@ module ALU(
         ////////// check the unsigned functions//////////   
         SET_LESS_U:
             begin
-            temp <= A - B;
-            if (temp < 32'b0)
+            if (A < B)
                 out <= 1;
             else
                 out <= 0;
@@ -174,8 +173,7 @@ module ALU(
         ////////// check the unsigned functions//////////
         CHECK_LESS_U:
             begin
-            out <= A - B;
-            if (out < 32'b0)
+            if (A < B)
                 begin
                 z_flag = 1'b0;
                 p_flag = 1'b0;
@@ -192,8 +190,7 @@ module ALU(
         ////////// check the unsigned functions//////////
         CHECK_GREATER_U:
             begin
-            out <= A - B;
-            if (out > 32'b0)
+            if (A > B)
                 begin
                 z_flag = 1'b0;
                 p_flag = 1'b1;

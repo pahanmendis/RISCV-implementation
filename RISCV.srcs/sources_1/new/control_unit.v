@@ -35,24 +35,57 @@ module control_unit(
     );
     
     //write control unit
-    parameter  control_signal_length=15; //36-1=35
+    parameter  control_signal_length = 15; // 16-1=15
     reg [control_signal_length:0] control_store[1023:0];
     reg [15:0] control_out;
-        
     
     initial 
     begin
     
-        control_store[0]  = 16'b0011000001100001;  //LUI
-        control_store[1]  = 16'b0011000001100001;  //insert control signals
+        control_store[55]  = 16'b0011000001100001;  //LUI
+        control_store[23]  = 16'b0011001101000001;  // AUIPC
+        control_store[111]  = 16'b0100100101000001; // JAL
+        control_store[103]  = 16'b0110101001000001; // JALR
+        control_store[99]  = 16'b1001011100000000;  // BEQ
+        control_store[227]  = 16'b1001011100000000; // BNE
+        control_store[611]  = 16'b1001011100000000; // BLT
+        control_store[739]  = 16'b1001011100000000; // BGE
+        control_store[867]  = 16'b1001011100000000; // BLTU
+        control_store[995]  = 16'b1001011100000000; // BGEU
+        control_store[3]  = 16'b0110100011101001;   // LB
+        control_store[131]  = 16'b0110100011110001; // LH
+        control_store[259]  = 16'b0110100011111001; // LW
+        control_store[515]  = 16'b0111000011101001; // LBU
+        control_store[643]  = 16'b0111000011110001; // LHU
+        control_store[35]  = 16'b1010100000000010;  // SB
+        control_store[163]  = 16'b1010100000000100; // SH
+        control_store[291]  = 16'b1010100000000110; // SW
+        control_store[19]  = 16'b0110100000100001;  // ADDI
+        control_store[275]  = 16'b0110100000100001; // SLTI
+        control_store[403]  = 16'b0111000000100001; // SLTIU
+        control_store[531]  = 16'b0110100000100001; // XORI
+        control_store[787]  = 16'b0110100000100001; // ORI
+        control_store[915]  = 16'b0110100000100001; // ANDI
+        control_store[147]  = 16'b1100000000100001; // SLLI
+        control_store[659]  = 16'b1100000000100001; // SRLI, SRAI
+        control_store[15]  = 16'b0000010000100001;  // ADD, SUB
+        control_store[179]  = 16'b0000010000100001; // SLL
+        control_store[307]  = 16'b0000010000100001; // SLT
+        control_store[435]  = 16'b0000010000100001; // SLTU
+        control_store[563]  = 16'b0000010000100001; // XOR
+        control_store[691]  = 16'b0000010000100001; // SRL, SRA
+        control_store[819]  = 16'b0000010000100001; // OR
+        control_store[947]  = 16'b0000010000100001; // AND
     
     end
     
     always @(*)
-        begin
-        control_out<=control_store[{func3,func7}];
-        end
-
+    begin
+        if (func7 == 7'd55 || func7 == 7'd23 || func7 == 7'd111)
+            control_out <= control_store[{3'b0,func7}];
+        else
+            control_out <= control_store[{func3,func7}];
+    end
     
     assign im_slice = control_out[15:13];
     assign extend = control_out[12:11];

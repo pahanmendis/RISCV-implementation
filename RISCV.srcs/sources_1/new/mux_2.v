@@ -29,9 +29,9 @@ module mux_2(
     
     always @(*)
     begin
-        if (sel==1'b0)
-            out<= A;
+        if (sel == 1'b0)
+            out <= A;
         else
-            out<=B;    
+            out <= B;    
     end
 endmodule
