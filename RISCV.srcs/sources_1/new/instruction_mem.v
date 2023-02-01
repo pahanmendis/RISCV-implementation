@@ -25,7 +25,7 @@ module instruction_mem(
     input [31:0] instruction_address,
     output reg [31:0] instruction
     );
-    parameter instruction_count = 200;         //set instruction count
+    parameter instruction_count = 200;         // set instruction count
     reg [31:0] instruction_rom [instruction_count:0]; //creating memory
     
     //define instructions
