@@ -29,34 +29,59 @@ module data_mem(
     output reg [31:0] read_data
     );
     parameter mem_depth = 199; //depth-1
-    reg [31:0] data_ram [mem_depth:0];    
+    reg [31:0] data_ram [mem_depth:0];
+    reg [29:0] line_address;
+    reg [1:0] block_address;   
     
     initial   //if required to store initial values
         begin
-            data_ram[0] = {31'b0}; //AC <- 0 
-            data_ram[1] = {31'b0}; //MAR <- AC 
-        end    
+            data_ram[0] = {31'b0}; 
+            data_ram[1] = {31'b0}; 
+        end 
+        
+    always@(data_address)
+        begin
+            line_address<=data_address[31:2];
+            block_address<=data_address[1:0];
+        end   
     
     always@(posedge MEM_clk)                    //output data
         begin
         if (mem_read==2'b01)
-            read_data<={24'd0,data_ram[data_address][7:0]};
+            read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][7:0]};
         else if (mem_read==2'b10)
-            read_data<={16'd0,data_ram[data_address][15:0]};
+            read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][15:0]};
         else if (mem_read==2'b11)
-            read_data<=data_ram[data_address];  
+            read_data<=data_ram[line_address];  
         else 
-            read_data<=read_data;          
+            read_data<=32'b0;          
         end
 
-    always@(posedge MEM_clk)                    //output data
+    always@(posedge MEM_clk)    //output data
         begin
-        if (mem_write==2'b01)      //check logic to write to data mem
-                data_ram[data_address]<={24'd0,write_data[7:0]};
-        else if (mem_write==2'b10)      //check logic to write to data mem
-                data_ram[data_address]<={16'd0,write_data[15:0]};
-        else if (mem_write==2'b11)      //check logic to write to data mem
-                data_ram[data_address]<=write_data;
+        if (mem_write == 2'b01)      // byte
+            case (block_address)
+            2'd0:
+                data_ram[line_address] <= {data_mem[line_address][31:8], write_data[7:0]};
+            2'd1:
+                data_ram[line_address] <= {data_mem[line_address][31:16], write_data[7:0], data_mem[line_address][7:0]};
+            2'd2:
+                data_ram[line_address] <= {data_mem[line_address][31:24], write_data[7:0], data_mem[line_address][15:0]};
+            2'd3:
+                data_ram[line_address] <= {write_data[7:0], data_mem[line_address][23:0]};
+            endcase
+            
+        else if (mem_write==2'b10)      // half-word
+            case (block_address)
+            2'd0:
+                data_ram[line_address] <= {data_mem[line_address][31:16], write_data[15:0]};
+            2'd2:
+                data_ram[line_address] <= {write_data[15:0], data_mem[line_address][15:0]};
+            endcase
+        
+        else if (mem_write==2'b11)      // word
+            data_ram[line_address]<=write_data;
+            
         end
     
 endmodule

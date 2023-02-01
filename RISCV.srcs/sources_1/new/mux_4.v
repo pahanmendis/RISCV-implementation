@@ -25,19 +25,19 @@ module mux_4(
     input [31:0] B, //output value if sel=1
     input [31:0] C, //output value if sel=
     input [31:0] D, //output value if sel=1
-    input [2:0] sel,
+    input [1:0] sel,
     output reg [31:0] out
     );
     
     always @(*)
     begin
-        if (sel==3'b0)
+        if (sel==2'b0)
             out<= A;
-        else if (sel==3'b001)
+        else if (sel==2'b01)
             out<= B;
-        else if (sel==3'b011)
+        else if (sel==2'b10)
             out<= C;
         else
-            out<=D;    
+            out<= D;    
     end
 endmodule

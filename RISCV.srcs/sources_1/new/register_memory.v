@@ -45,7 +45,7 @@ module register_memory(
         begin
             if(reg_write==1'b1)     //writing to destination reg ***check the logic is 1 or 0 to write
                 begin
-                    reg_ram[rd_addr] <=write_data;
+                    reg_ram[rd_addr] <= write_data;
                 end
         end
 endmodule

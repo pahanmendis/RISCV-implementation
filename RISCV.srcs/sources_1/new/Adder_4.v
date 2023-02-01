@@ -22,12 +22,16 @@
 
 module Adder_4(
     input MEM_clk,
-    input [31:0] PC_in,   //define proper bus widths
+    input [31:0] PC_in,   // define proper bus widths
+    input [1:0] branch,
     output reg [31:0] sum
     );
     
     always@(posedge MEM_clk)
         begin
-        sum <= PC_in + 32'd4; // **check if we need to include overflow failsafes
+        if (branch == 2'b01 || branch == 2'b10)
+            sum <= PC_in + 32'd4; // **check if we need to include overflow failsafes
+        else
+            sum <= PC_in;
         end
 endmodule

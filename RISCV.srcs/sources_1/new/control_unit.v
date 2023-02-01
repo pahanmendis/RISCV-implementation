@@ -22,7 +22,7 @@
 
 module control_unit(
     input ID_clk,
-    input [6:0] func7,
+    input [6:0] opcode,
     input [2:0] func3,
     output [2:0] im_slice,
     output [1:0] extend,
@@ -81,10 +81,10 @@ module control_unit(
     
     always @(*)
     begin
-        if (func7 == 7'd55 || func7 == 7'd23 || func7 == 7'd111)
-            control_out <= control_store[{3'b0,func7}];
+        if (opcode == 7'd55 || opcode == 7'd23 || opcode == 7'd111)
+            control_out <= control_store[{3'b0,opcode}];
         else
-            control_out <= control_store[{func3,func7}];
+            control_out <= control_store[{func3,opcode}];
     end
     
     assign im_slice = control_out[15:13];
