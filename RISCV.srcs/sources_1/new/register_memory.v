@@ -32,7 +32,7 @@ module register_memory(
     output reg [31:0] rs2_data
     );
     
-    parameter reg_count = 31; //n-1
+    parameter reg_count = 31; // n-1
     reg [31:0] reg_ram [reg_count:0];
     
     always @(posedge ID_clk)    //output reg data to port 1 and port 2

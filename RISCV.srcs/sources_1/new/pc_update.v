@@ -25,7 +25,7 @@ module pc_update(
     input [31:0] program_counter,
     input [31:0] immediate_data,
     input [31:0] c_bus,
-    output [31:0] pc_update_out,
+    output reg [31:0] pc_update_out,
     input [1:0] branch,
     input  z_flag,
     input p_flag,

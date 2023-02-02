@@ -51,6 +51,7 @@ module ALU(
     parameter CHECK_GREATER_U = 5'b10000;   // A > B? N = 1 : P = 0, N = 0, unsigned
 
     //events performed at positive edge
+    reg [31:0] temp = 0;
     
     initial 
         begin

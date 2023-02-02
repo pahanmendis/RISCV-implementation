@@ -526,3 +526,95 @@ selectCodeEditor("RISCV_top.v", 1316, 1053); // be
 selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "pc_update.v", 2); // m
 selectCodeEditor("pc_update.v", 84, 666); // be
 selectCodeEditor("pc_update.v", 138, 530); // be
+// Elapsed time: 93 seconds
+selectCodeEditor("pc_update.v", 553, 631); // be
+selectCodeEditor("pc_update.v", 442, 651); // be
+selectCodeEditor("pc_update.v", 851, 843); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+typeControlKey(null, null, 'z');
+selectCodeEditor("pc_update.v", 292, 660); // be
+// TclEventType: DG_GRAPH_STALE
+// TclEventType: FILE_SET_CHANGE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 110 MB. Current time: 2/2/23, 11:04:54 AM IST
+// Elapsed time: 1788 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), pc_update1 : pc_update (pc_update.v)]", 14, false); // D
+selectCodeEditor("pc_update.v", 933, 793); // be
+// Elapsed time: 32 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RICV_tb (RICV_tb.v)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RICV_tb (RICV_tb.v)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+// WARNING: HEventQueue.dispatchEvent() is taking  1061 ms.
+dismissDialog("Opening Editor"); // bA
+expandTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RICV_tb (RICV_tb.v)]", 1); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RICV_tb (RICV_tb.v), ALU_dt : ALU (ALU.v)]", 2, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RICV_tb (RICV_tb.v), ALU_dt : ALU (ALU.v)]", 2, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1060 ms.
+dismissDialog("Opening Editor"); // bA
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RICV_tb (RICV_tb.v)]", 1, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RICV_tb (RICV_tb.v)]", 1, true, false, false, false, false, true); // D - Double Click - Node
+dismissDialog("Opening Editor"); // bA
+closeView(PAResourceOtoP.PAViews_CODE, "Code"); // D
+selectTab("PlanAheadTabBaseWorkspace_JideTabbedPane", (HResource) null, "Project Summary", 0); // m
+closeView(PAResourceOtoP.PAViews_PROJECT_SUMMARY, "Project Summary"); // v
+selectCodeEditor("RICV_tb.v", 301, 586); // be
+selectCodeEditor("RICV_tb.v", 289, 551); // be
+// Elapsed time: 11 seconds
+selectCodeEditor("RICV_tb.v", 0, 172); // be
+// Elapsed time: 20 seconds
+selectCodeEditor("RICV_tb.v", 183, 568); // be
+selectCodeEditor("RICV_tb.v", 1, 512); // be
+selectCodeEditor("RICV_tb.v", 767, 960); // be
+selectCodeEditor("RICV_tb.v", 56, 1209); // be
+// Elapsed time: 26 seconds
+selectButton(PAResourceCommand.PACommandNames_ADD_SOURCES, "Sources_add_sources"); // D
+// Run Command: PAResourceCommand.PACommandNames_ADD_SOURCES
+selectRadioButton(PAResourceAtoD.AddSrcWizard_SPECIFY_SIMULATION_SPECIFIC_HDL_FILES, "Add or create simulation sources"); // a
+selectButton("NEXT", "Next >"); // JButton
+selectButton(PAResourceQtoS.SrcChooserPanel_CREATE_FILE, "Create File"); // a
+dismissDialog("Create Source File"); // F
+// 'g' command handler elapsed time: 15 seconds
+dismissDialog("Add Sources"); // c
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, RISCV_top (RISCV_top.v)]", 23, true, false, false, false, true, false); // D - Popup Trigger - Node
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceQtoS.SrcMenu_IP_HIERARCHY, "IP Hierarchy"); // al
+selectMenu(PAResourceCommand.PACommandNames_AUTO_UPDATE_HIER, "Hierarchy Update"); // al
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Adder (Adder.v)]", 24, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Adder (Adder.v)]", 24, false, false, false, false, false, true); // D - Double Click
+// WARNING: HEventQueue.dispatchEvent() is taking  1060 ms.
+dismissDialog("Opening Editor"); // bA
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mux_64 (mux.v)]", 25, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Adder (Adder.v)]", 24, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, mux_64 (mux.v)]", 25, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Adder (Adder.v)]", 24, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Adder (Adder.v)]", 24, false, false, false, false, true, false); // D - Popup Trigger
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, RISCV_top (RISCV_top.v)]", 23, true); // D - Node
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Adder (Adder.v)]", 24, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Simulation Sources, sim_1, Adder (Adder.v)]", 24, false, false, false, false, true, false); // D - Popup Trigger
+selectMenuItem(RDIResourceCommand.RDICommands_DELETE, "Remove File from Project..."); // ao
+// Run Command: RDIResourceCommand.RDICommands_DELETE
+selectButton(RDIResource.BaseDialog_CANCEL, "Cancel"); // a
+dismissDialog("Remove Sources"); // aE
+// HMemoryUtils.trashcanNow. Engine heap size: 1,284 MB. GUI used memory: 100 MB. Current time: 2/2/23, 11:34:54 AM IST
+// Elapsed time: 84 seconds
+selectCodeEditor("Adder.v", 171, 822); // be
+// Elapsed time: 24 seconds
+selectCodeEditor("Adder.v", 91, 762); // be
+// Elapsed time: 31 seconds
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), intruction_memory : instruction_mem (instruction_mem.v)]", 3, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), pc : program_counter (program_counter.v)]", 4, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), reg_memory : register_memory (register_memory.v)]", 5, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), immediate_data_generator : immediate_data_gen (immediate_data_gen.v)]", 6, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), ALU_controls : ALU_control_gen (ALU_control_gen.v)]", 7, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), CU : control_unit (control_unit.v)]", 8, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), mux2 : mux_2 (mux_2.v)]", 9, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), ALU1 : ALU (ALU.v)]", 10, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), data_memory : data_mem (data_mem.v)]", 11, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), mux4 : mux_4 (mux_4.v)]", 12, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), pc_update1 : pc_update (pc_update.v)]", 13, false); // D
+selectTree(PAResourceEtoH.FileSetPanel_FILE_SET_PANEL_TREE, "[root, Design Sources, RISCV_top (RISCV_top.v), add4 : Adder_4 (Adder_4.v)]", 14, false); // D
