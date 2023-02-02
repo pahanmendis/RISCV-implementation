@@ -29,11 +29,13 @@ module RISCV_top(
     
     );
 //wire declarations  
-wire [31:0] program_counter, instruction , write_data, pc_update_out;
+wire [31:0] program_counter, instruction, write_data, pc_update_out;
 
 wire [31:0] rs1_data,rs2_data,immediate_data,B_bus,C_bus,read_data, pc_add4;
 
 wire [4:0] ALU_op;
+
+//program_counter <= 32'b0;
 
 //flags
 wire z_flag,p_flag,n_flag;
@@ -49,7 +51,7 @@ wire reg_write;
     
 instruction_mem intruction_memory   (    .IF_clk(IF_clk),    .instruction_address(program_counter),    .instruction(instruction)    );  
 
-program_counter     pc              (    .clk(MEM_clk),    .pc_input(pc_update_out),    .pc_output(program_counter)    );
+program_counter     pc              (    .WB_clk(WB_clk),    .pc_input(pc_update_out),    .pc_output(program_counter)    );
 
 register_memory     reg_memory      (.ID_clk(ID_clk), .WB_clk(WB_clk), .reg_write(reg_write), .rs1_addr(instruction[19:15]), .rs2_addr(instruction[24:20]), .rd_addr(instruction[11:7]),  .write_data(write_data),  .rs1_data(rs1_data),    .rs2_data(rs2_data)    );
 

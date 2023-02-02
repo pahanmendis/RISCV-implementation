@@ -25,6 +25,10 @@ module program_counter(
     input [31:0] pc_input,
     output reg [31:0] pc_output
     );
+    initial
+    begin
+        pc_output<=32'd0;
+    end
     
     always @(posedge WB_clk)
         begin

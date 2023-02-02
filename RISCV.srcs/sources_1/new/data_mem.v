@@ -35,8 +35,8 @@ module data_mem(
     
     initial   //if required to store initial values
         begin
-            data_ram[0] = {31'b0}; 
-            data_ram[1] = {31'b0}; 
+            data_ram[0] = {32'b00000000000000001000000000000000}; 
+            data_ram[1] = {32'b00000000100000000000000000000000}; 
         end 
         
     always@(data_address)

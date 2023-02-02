@@ -35,18 +35,17 @@ module instruction_mem(
        
     always @(posedge IF_clk)
         begin
-         instruction<=instruction_rom[instruction_address]; 
+         instruction <= instruction_rom[instruction_address]; 
         end
         
-//    initial 
-//        begin
-//            //inst_ram[0] = instruction  //put instructions 174
-//                           //{opcode(8bits),immediate_data(24bits)}   should match 24 bits
-//            instruction_rom[0] = {FETCH,24'b0}; //AC <— 0 
-//            instruction_rom[1] = {NOOP,24'b0}; //MAR <— AC 
+    initial 
+        begin
+            //inst_ram[0] = instruction  //put instructions 174
+                           //{opcode(8bits),immediate_data(24bits)}   should match 24 bits
+            instruction_rom[0] = 32'b00000000100100000000001010010011; 
     
         
         
-//        end
+        end
     
 endmodule

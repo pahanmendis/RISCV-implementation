@@ -29,7 +29,7 @@ module mux_2(
     
     always @(*)
     begin
-        if (sel == 1'b0)
+        if (sel == 1'b1)
             out <= A;
         else
             out <= B;    

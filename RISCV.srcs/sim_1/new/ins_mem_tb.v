@@ -38,7 +38,9 @@ module ins_mem_tb( );
     initial
     begin
         
+        instruction_address = 32'b0;
         
+        #20 $finish;
                
     end
 
