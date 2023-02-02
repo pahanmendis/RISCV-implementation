@@ -1,0 +1,19 @@
+0.7
+2020.2
+Oct 19 2021
+03:16:22
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.sim/sim_1/behav/xsim/glbl.v,1634335545,verilog,,,,glbl,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/ALU.v,1675306455,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/RICV_tb.v,,ALU,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/ALU_control_gen.v,1675306455,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/Adder_4.v,,ALU_control_gen,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/Adder_4.v,1675310289,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/control_unit.v,,Adder_4,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/RICV_tb.v,1675313747,verilog,,,,RICV_tb,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/RISCV_top.v,1675311077,verilog,,,,RISCV_top,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/control_unit.v,1675306455,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/data_mem.v,,control_unit,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/data_mem.v,1675309997,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/immediate_data_gen.v,,data_mem,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/immediate_data_gen.v,1675306455,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/instruction_mem.v,,immediate_data_gen,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/instruction_mem.v,1675306455,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/mux_2.v,,instruction_mem,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/mux_2.v,1675306455,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/mux_4.v,,mux_2,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/mux_4.v,1675309500,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/pc_update.v,,mux_4,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/pc_update.v,1675309863,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/program_counter.v,,pc_update,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/program_counter.v,1674762322,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/register_memory.v,,program_counter,,,,,,,,
+E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/register_memory.v,1675306455,verilog,,E:/Work/RTL/CSD23 RISCV/RISCV/RISCV.srcs/sources_1/new/RISCV_top.v,,register_memory,,,,,,,,
