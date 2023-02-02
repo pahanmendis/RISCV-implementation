@@ -52,8 +52,6 @@ module ALU(
 
     //events performed at positive edge
     
-    reg [31:0] temp;
-    
     initial 
         begin
             out = 24'b0;
@@ -148,8 +146,7 @@ module ALU(
             
         SET_LESS:
             begin
-            temp <= A - B;
-            if (temp < 32'b0)
+            if (A < B)
                 out <= 1;
             else
                 out <= 0;

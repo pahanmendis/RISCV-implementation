@@ -42,7 +42,7 @@ wire [1:0] extend;
 wire [2:0] im_slice;
 wire alu_source;
 wire [1:0] branch;
-wire [2:0] to_reg;
+wire [1:0] to_reg;
 wire [1:0] mem_read;
 wire [1:0] mem_write;
 wire reg_write;  

@@ -28,7 +28,7 @@ module control_unit(
     output [1:0] extend,
     output alu_source,
     output [1:0] branch,
-    output [2:0] to_reg,
+    output [1:0] to_reg,
     output [1:0] mem_read,
     output [1:0] mem_write,
     output reg_write

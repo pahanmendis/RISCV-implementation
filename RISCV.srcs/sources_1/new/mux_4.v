@@ -25,7 +25,7 @@ module mux_4(
     input [31:0] B, //output value if sel=1
     input [31:0] C, //output value if sel=
     input [31:0] D, //output value if sel=1
-    input [2:0] sel,
+    input [1:0] sel,
     output reg [31:0] out
     );
     
