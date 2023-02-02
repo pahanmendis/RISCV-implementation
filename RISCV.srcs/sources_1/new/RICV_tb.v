@@ -21,65 +21,47 @@
 
 
 module RICV_tb(    );
+    reg IF_clk;
+    reg ID_clk;
+    reg EX_clk;
+    reg MEM_clk;
+    reg WB_clk;
 
-reg clk;
-reg reset;
+    RISCV_top dut (.IF_clk(IF_clk), .ID_clk(ID_clk), .EX_clk(EX_clk), .MEM_clk(MEM_clk), .WB_clk(WB_clk));
 
-//wire declaration for the specific module
-reg [31:0] A;                       //identify input signals
-reg [31:0] B;                       //identify input signals
-reg [4:0] ALU_op;                   //identify the control signals
-wire  z_flag,     p_flag,     n_flag;
-wire [31:0] out; 
-
-
-
-//dut instantiation -> look at the input ports and declare reg to give inputs,  declare wires for the output ports
-//then give those wires to the input and output ports
-//ALU(    input EX_clk,    input [31:0] A,    input [31:0] B,    input [4:0] ALU_op,    output reg z_flag,    output reg p_flag,    output reg n_flag,    output reg [31:0] out    );
-ALU ALU_dt(    .EX_clk(clk),    .A(A),    .B(B),    .ALU_op(ALU_op),    .z_flag(z_flag),    .p_flag(p_flag),    .n_flag(n_flag),    .out(out)    );
-
-//clk generation
-initial 
-    begin
-    clk = 1'b0;
-    forever #1 clk = ~clk;
-    end
-
-//generate reset
-initial
-    begin
-        reset=1'b1;
-        #10   //wait for 10 time units
-        reset=1'b0;
-    end
-
-// giving inputs and testing the module    
-
-initial
-    begin
-        $monitor("time=%3d, A=%b, B=%b,ALU_op=%b, OUT=%b \n",$time, A, B,ALU_op, out); //using this function you can view outputs on the console
-        A=32'd0;            //inital values
-        B=32'd0;
-        ALU_op=32'd0;
+    //clk generation
+    initial 
+        begin
+        IF_clk = 1'b0;
+        forever #100 IF_clk = ~IF_clk;
+        end
         
+    initial 
+        begin
+        ID_clk = 1'b0;
+        #25
+        forever #100 ID_clk = ~ID_clk;
+        end
         
-        #20                //wait 20 time units
-        ALU_op=32'd0;       //set to the require operation
-        A=32'd1;            //required values
-        B=32'd1;
+    initial 
+        begin
+        EX_clk = 1'b0;
+        #50
+        forever #100 EX_clk = ~EX_clk;
+        end
         
+    initial 
+        begin
+        MEM_clk = 1'b0;
+        #75
+        forever #100 MEM_clk = ~MEM_clk;
+        end   
         
-        #20                //wait 20 time units
-        ALU_op=32'd2;       //set to the require operation
-        A=32'd5;            //required values
-        B=32'd6;
-        
-        
-        
-
-    end    
-
-     
+    initial 
+        begin
+        WB_clk = 1'b0;
+        #100
+        forever #100 WB_clk = ~WB_clk;
+        end
 
 endmodule
