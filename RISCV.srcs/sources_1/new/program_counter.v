@@ -21,12 +21,12 @@
 
 
 module program_counter(
-    input clk,
-    input [63:0] pc_input,
-    output reg [63:0] pc_output
+    input WB_clk,
+    input [31:0] pc_input,
+    output reg [31:0] pc_output
     );
     
-    always @(posedge clk)
+    always @(posedge WB_clk)
         begin
         pc_output<=pc_input;  //might have to include additional logic
         end
