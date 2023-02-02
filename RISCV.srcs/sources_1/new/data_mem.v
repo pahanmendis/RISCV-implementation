@@ -62,21 +62,21 @@ module data_mem(
         if (mem_write == 2'b01)      // byte
             case (block_address)
             2'd0:
-                data_ram[line_address] <= {data_mem[line_address][31:8], write_data[7:0]};
+                data_ram[line_address] <= {data_ram[line_address][31:8], write_data[7:0]};
             2'd1:
-                data_ram[line_address] <= {data_mem[line_address][31:16], write_data[7:0], data_mem[line_address][7:0]};
+                data_ram[line_address] <= {data_ram[line_address][31:16], write_data[7:0], data_ram[line_address][7:0]};
             2'd2:
-                data_ram[line_address] <= {data_mem[line_address][31:24], write_data[7:0], data_mem[line_address][15:0]};
+                data_ram[line_address] <= {data_ram[line_address][31:24], write_data[7:0], data_ram[line_address][15:0]};
             2'd3:
-                data_ram[line_address] <= {write_data[7:0], data_mem[line_address][23:0]};
+                data_ram[line_address] <= {write_data[7:0], data_ram[line_address][23:0]};
             endcase
             
         else if (mem_write==2'b10)      // half-word
             case (block_address)
             2'd0:
-                data_ram[line_address] <= {data_mem[line_address][31:16], write_data[15:0]};
+                data_ram[line_address] <= {data_ram[line_address][31:16], write_data[15:0]};
             2'd2:
-                data_ram[line_address] <= {write_data[15:0], data_mem[line_address][15:0]};
+                data_ram[line_address] <= {write_data[15:0], data_ram[line_address][15:0]};
             endcase
         
         else if (mem_write==2'b11)      // word
