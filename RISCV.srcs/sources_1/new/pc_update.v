@@ -32,6 +32,11 @@ module pc_update(
     input n_flag
     );
     
+    initial
+    begin
+        pc_update_out <= 32'b0;
+    end
+    
      always @(posedge MEM_clk)
         begin
             casez ({branch,z_flag, p_flag, n_flag})

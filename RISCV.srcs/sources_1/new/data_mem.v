@@ -53,11 +53,11 @@ module data_mem(
                 2'd0:
                     read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][7:0]};
                 2'd1:
-                    read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][15:8]};
+                    read_data<={{24{data_ram[line_address][15]}},data_ram[line_address][15:8]};
                 2'd2:
-                    read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][23:16]};
+                    read_data<={{24{data_ram[line_address][23]}},data_ram[line_address][23:16]};
                 2'd3:
-                    read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][31:24]};
+                    read_data<={{24{data_ram[line_address][31]}},data_ram[line_address][31:24]};
                 endcase
             end
         else if (mem_read==2'b10) // halfword
@@ -66,7 +66,7 @@ module data_mem(
                 2'd0:
                     read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][15:0]};
                 2'd2:
-                    read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][31:16]};
+                    read_data<={{16{data_ram[line_address][31]}},data_ram[line_address][31:16]};
                 endcase
             end
         else if (mem_read==2'b11)
