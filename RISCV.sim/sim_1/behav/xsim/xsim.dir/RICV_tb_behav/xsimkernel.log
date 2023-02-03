@@ -2,3 +2,6 @@ Running: xsim.dir/RICV_tb_behav/xsimk.exe -simmode gui -wdb RICV_tb_behav.wdb -s
 Design successfully loaded
 Design Loading Memory Usage: 9936 KB (Peak: 9936 KB)
 Design Loading CPU Usage: 31 ms
+Simulation completed
+Simulation Memory Usage: 10700 KB (Peak: 10700 KB)
+Simulation CPU Usage: 61 ms

@@ -81,7 +81,7 @@ module control_unit(
     
     always @(*)
     begin
-        if (opcode == 7'd55 || opcode == 7'd23 || opcode == 7'd111)
+        if (opcode == 7'd55 || opcode == 7'd23 || opcode == 7'd111) // For LUI, AUIPC, JAL which don't have func3
             control_out <= control_store[{3'b0,opcode}];
         else
             control_out <= control_store[{func3,opcode}];

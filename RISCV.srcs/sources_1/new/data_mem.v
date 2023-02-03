@@ -47,10 +47,10 @@ module data_mem(
     
     always@(posedge MEM_clk)                    //output data
         begin
-        if (mem_read==2'b01)
-            read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][7:0]};
-        else if (mem_read==2'b10)
-            read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][15:0]};
+        if (mem_read==2'b01) // byte
+            read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][8*block_address + 7:8*block_address]};
+        else if (mem_read==2'b10) // halfword
+            read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][16*block_address[1]+15:16*block_address[1]]};
         else if (mem_read==2'b11)
             read_data<=data_ram[line_address];  
         else 

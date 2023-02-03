@@ -25,13 +25,14 @@ module instruction_mem(
     input [31:0] instruction_address,
     output reg [31:0] instruction
     );
+    
     parameter instruction_count = 200;         // set instruction count
     reg [31:0] instruction_rom [instruction_count:0]; //creating memory
     
     //define instructions
-    parameter FETCH = 8'd0;
-    parameter NOOP = 8'd3;
-    parameter LDX1R1 = 8'd9;   
+//    parameter FETCH = 8'd0;
+//    parameter NOOP = 8'd3;
+//    parameter LDX1R1 = 8'd9;   
        
     always @(posedge IF_clk)
         begin
@@ -43,9 +44,7 @@ module instruction_mem(
             //inst_ram[0] = instruction  //put instructions 174
                            //{opcode(8bits),immediate_data(24bits)}   should match 24 bits
             instruction_rom[0] = 32'b00000000100100000000001010010011; 
-    
-        
-        
+            
         end
     
 endmodule
