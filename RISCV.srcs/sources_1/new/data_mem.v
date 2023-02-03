@@ -48,9 +48,27 @@ module data_mem(
     always@(posedge MEM_clk)                    //output data
         begin
         if (mem_read==2'b01) // byte
-            read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][8*block_address + 7:8*block_address]};
+            begin
+                case (block_address)
+                2'd0:
+                    read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][7:0]};
+                2'd1:
+                    read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][15:8]};
+                2'd2:
+                    read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][23:16]};
+                2'd3:
+                    read_data<={{24{data_ram[line_address][7]}},data_ram[line_address][31:24]};
+                endcase
+            end
         else if (mem_read==2'b10) // halfword
-            read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][16*block_address[1]+15:16*block_address[1]]};
+            begin
+                case (block_address)
+                2'd0:
+                    read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][15:0]};
+                2'd2:
+                    read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][31:16]};
+                endcase
+            end
         else if (mem_read==2'b11)
             read_data<=data_ram[line_address];  
         else 
