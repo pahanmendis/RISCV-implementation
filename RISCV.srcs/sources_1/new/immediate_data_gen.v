@@ -1,22 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 01/27/2023 12:29:40 AM
-// Design Name: 
-// Module Name: immediate_data_gen
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+/*
+The immediate generation module, triggered by the positive edge of the ID clock
+Functions:  Reads the instruction and identifies what format of immediate extension should happen and perform it 
+            Can extend with sign or zero
+Inputs:     32-bit immediate_data_gen
+            Control bits to indicate the fields to slice and mode of extension(sign or zero)
+Outputs:    The extended immediate
+*/ 
 //////////////////////////////////////////////////////////////////////////////////
 
 

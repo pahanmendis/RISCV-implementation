@@ -1,22 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 01/27/2023 12:47:23 AM
-// Design Name: 
-// Module Name: ALU
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+/*
+The ALU module, triggered by the positive edge of the EXE clock
+Functions:  Performs arithmatic and logic operations
+Inputs:     2 inputs 
+            ALU opcodes 
+Outputs:    The computed output 
+            zero, positive and negative flags
+*/ 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -49,6 +40,7 @@ module ALU(
     parameter ADDI = 5'b01110;              // A+B
     parameter CHECK_LESS_U = 5'b01111;      // A < B? N = 1 : P = 0, N = 0, unsigned
     parameter CHECK_GREATER_U = 5'b10000;   // A > B? N = 1 : P = 0, N = 0, unsigned
+    parameter LOAD_STORE = 5'b10001;        // A+B
 
     //events performed at positive edge
     reg [31:0] temp = 0;
@@ -66,7 +58,12 @@ module ALU(
     begin
         case(ALU_op)
         ADDITION:
+        begin
             out <= A + B;
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end
             
         SUBTRACTION:
             begin
@@ -75,27 +72,59 @@ module ALU(
                 z_flag = 1'b1;
             else
                 z_flag = 1'b0;
+                
+            p_flag = 1'b0;
+            n_flag = 1'b0;
             end
             
         L_SHIFT_RIGHT:
+        begin
             out <= A >> B[4:0];
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end            
             
         A_SHIFT_RIGHT:
             begin
-            temp <= A >> B[4:0];
-            out <= {A[31], temp[30:0]};
+            temp = A >> B[4:0];
+            out = {A[31], temp[30:0]};
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
             end
             
         L_SHIFT_LEFT:
+        begin
             out <= A << B[4:0];
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end
             
         XOR:
+        begin
             out <= A ^ B;
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end
             
         AND:
+        begin
             out <= A & B;
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end 
+        
         OR:
+        begin
             out <= A | B; 
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end
               
         CHECK_EQUAL:
             begin
@@ -151,6 +180,9 @@ module ALU(
                 out <= 1;
             else
                 out <= 0;
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
             end
         
         ////////// check the unsigned functions//////////   
@@ -160,13 +192,26 @@ module ALU(
                 out <= 1;
             else
                 out <= 0;
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
             end
             
         JUMP_LINK:
+        begin
             out <= {A[31:1]+B[31:1], 1'b0};
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end
             
         ADDI:
+        begin
             out <= A + B;
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end
             
         ////////// check the unsigned functions//////////
         CHECK_LESS_U:
@@ -202,8 +247,21 @@ module ALU(
                 end
             end
             
+        LOAD_STORE:
+        begin
+            out <= A+B;
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end
+            
         default:
+        begin
             out <= 32'b0;
+            z_flag = 1'b0;
+            p_flag = 1'b0;
+            n_flag = 1'b0;
+        end
             
         endcase       
     end    

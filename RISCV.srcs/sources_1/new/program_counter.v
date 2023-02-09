@@ -1,22 +1,11 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 01/27/2023 01:11:52 AM
-// Design Name: 
-// Module Name: program_counter
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+/*
+The program counter register, triggered by the positive edge of the WB clock of the previous instruction
+Function:   Passes the program counter to the instruction memory to begin the next instruction 
+Inputs:     32-bit program counter
+Outputs:    32-bit program counter
+*/
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -25,6 +14,8 @@ module program_counter(
     input [31:0] pc_input,
     output reg [31:0] pc_output
     );
+    
+    // set default PC to 0 at the start
     initial
     begin
         pc_output<=32'd0;
@@ -32,45 +23,6 @@ module program_counter(
     
     always @(posedge WB_clk)
         begin
-        pc_output<=pc_input;  //might have to include additional logic
+        pc_output <= pc_input;  // passes the PC to the output
         end
 endmodule
-
-//module ProgamCounter(
-//    input clk,
-//    input en,
-//    input w_en,
-//    input complete,
-//    input inc,
-//    input [27:0] data_in,
-//    output reg [7:0] instruction_address //input to instruction register and B bus mux
-//    );
-//    reg start=1'b0;
-    
-//    always @(posedge en)
-//        start<=1'b1;  //check the logic
-    
-    
-//    always @(posedge clk)
-//        begin
-//            if (complete==1)
-//                begin
-//                instruction_address <= instruction_address;
-//                end
-//            else if (start) 
-//                begin
-//                    if(w_en==1)
-//                        begin
-//                            instruction_address <= data_in[7:0];
-//                        end
-//                     else if (inc==1)
-//                         begin
-//                            instruction_address <= instruction_address+1;
-//                         end
-//                     else
-//                         begin
-//                            instruction_address<=instruction_address;
-//                         end
-//                 end   
-//        end  
-//endmodule

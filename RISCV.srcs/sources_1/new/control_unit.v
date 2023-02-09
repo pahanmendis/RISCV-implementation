@@ -1,22 +1,12 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 01/27/2023 12:39:44 AM
-// Design Name: 
-// Module Name: control_unit
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+/*
+The main control unit module, triggered by the positive edge of the ID clock
+Functions:  Processes the instructions and assigns the necessary control signals for the elements of the datapath
+Inputs:     opcode (ins[6:0])
+            func3 (ins(14:12)
+Outputs:    The control signals
+*/ 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -28,26 +18,26 @@ module control_unit(
     output [1:0] extend,
     output alu_source,
     output [1:0] branch,
-    output [1:0] to_reg,
+    output [2:0] to_reg,
     output [1:0] mem_read,
     output [1:0] mem_write,
     output reg_write
     );
     
-    //write control unit
-    parameter  control_signal_length = 15; // 16-1=15
-    reg [control_signal_length:0] control_store[1023:0];
+    // write control unit
+    parameter  control_signal_length = 15; // number of control signal - 1
+    reg [control_signal_length:0] control_store[1023:0];    // allocating memory for the control store
     reg [15:0] control_out;
     
     initial 
     begin
-    
+        // index in the control store is {func3, opcode}
         control_store[55]  = 16'b0011000001100001;  //LUI
         control_store[23]  = 16'b0011001101000001;  // AUIPC
         control_store[111]  = 16'b0100100101000001; // JAL
         control_store[103]  = 16'b0110101001000001; // JALR
         control_store[99]  = 16'b1001011100000000;  // BEQ
-        control_store[227]  = 16'b1001011100000000; // BNE
+        control_store[227]  = 16'b1001011000000000; // BNE
         control_store[611]  = 16'b1001011100000000; // BLT
         control_store[739]  = 16'b1001011100000000; // BGE
         control_store[867]  = 16'b1001011100000000; // BLTU
@@ -68,7 +58,7 @@ module control_unit(
         control_store[915]  = 16'b0110100000100001; // ANDI
         control_store[147]  = 16'b1100000000100001; // SLLI
         control_store[659]  = 16'b1100000000100001; // SRLI, SRAI
-        control_store[15]  = 16'b0000010000100001;  // ADD, SUB
+        control_store[51]  = 16'b0000010000100001;  // ADD, SUB
         control_store[179]  = 16'b0000010000100001; // SLL
         control_store[307]  = 16'b0000010000100001; // SLT
         control_store[435]  = 16'b0000010000100001; // SLTU
@@ -84,9 +74,10 @@ module control_unit(
         if (opcode == 7'd55 || opcode == 7'd23 || opcode == 7'd111) // For LUI, AUIPC, JAL which don't have func3
             control_out <= control_store[{3'b0,opcode}];
         else
-            control_out <= control_store[{func3,opcode}];
+            control_out <= control_store[{func3,opcode}]; // index in the control store is {func3, opcode}
     end
     
+    // slicing the control signals into individual lines
     assign im_slice = control_out[15:13];
     assign extend = control_out[12:11];
     assign alu_source = control_out[10];

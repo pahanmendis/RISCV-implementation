@@ -44,12 +44,12 @@ wire [1:0] extend;
 wire [2:0] im_slice;
 wire alu_source;
 wire [1:0] branch;
-wire [1:0] to_reg;
+wire [2:0] to_reg;
 wire [1:0] mem_read;
 wire [1:0] mem_write;
 wire reg_write;  
     
-instruction_mem intruction_memory   (    .IF_clk(IF_clk),    .instruction_address(program_counter),    .instruction(instruction)    );  
+instruction_mem intruction_memory   (    .IF_clk(IF_clk),    .instruction_address(program_counter[31:2]),    .instruction(instruction)    );  
 
 program_counter     pc              (    .WB_clk(WB_clk),    .pc_input(pc_update_out),    .pc_output(program_counter)    );
 
@@ -70,7 +70,7 @@ data_mem            data_memory     (   .MEM_clk(MEM_clk),  .mem_write(mem_write
 
 mux_4               mux4            (    .A(immediate_data),     .B(C_bus),     .C(read_data),     .D(pc_add4),     .sel(to_reg),   .out(write_data)    );         
 
-pc_update           pc_update1      (    .program_counter(program_counter),    .immediate_data(immediate_data),    .c_bus(C_bus),    .pc_update_out(pc_update_out),    .branch(branch),    .z_flag(z_flag),    .p_flag(p_flag),    .n_flag(n_flag)    );
+pc_update           pc_update1      (    .MEM_clk(MEM_clk), .program_counter(program_counter),    .immediate_data(immediate_data),    .c_bus(C_bus),    .pc_update_out(pc_update_out),    .branch(branch),    .z_flag(z_flag),    .p_flag(p_flag),    .n_flag(n_flag)    );
 
 Adder_4             add4            (    .MEM_clk(MEM_clk),    .pc_in(pc_update_out),      .branch(branch),    .pc_add_4(pc_add4)    );
 

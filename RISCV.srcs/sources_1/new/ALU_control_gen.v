@@ -1,22 +1,11 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 01/27/2023 12:54:28 AM
-// Design Name: 
-// Module Name: ALU_control_gen
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+/*
+The ALU control logic generation module, continuous assignment
+Functions:  Generates the opcodes for the ALU
+Inputs:     32-bit instruction
+Outputs:    The opcode
+*/ 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -64,6 +53,8 @@ module ALU_control_gen(
             ALU_op <= 5'b01111;
         11'b?1111100011:
             ALU_op <= 5'b10000;
+        11'b????0?00011:
+            ALU_op <= 5'b10001;
             
         default:
             ALU_op <= 5'b11111;

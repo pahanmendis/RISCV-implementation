@@ -1,0 +1,382 @@
+
+*** Running vivado
+    with args -log RICV_tb.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source RICV_tb.tcl
+
+
+
+****** Vivado v2021.2 (64-bit)
+  **** SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+  **** IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+    ** Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
+
+source RICV_tb.tcl -notrace
+Command: synth_design -top RICV_tb -part xc7z020clg484-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 3664
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:04 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'RICV_tb' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RICV_tb.v:23]
+WARNING: [Synth 8-6896] loop limit (65536) exceeded inside initial block, initial block items will be ignored [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RICV_tb.v:36]
+WARNING: [Synth 8-6896] loop limit (65536) exceeded inside initial block, initial block items will be ignored [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RICV_tb.v:43]
+WARNING: [Synth 8-6896] loop limit (65536) exceeded inside initial block, initial block items will be ignored [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RICV_tb.v:50]
+WARNING: [Synth 8-6896] loop limit (65536) exceeded inside initial block, initial block items will be ignored [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RICV_tb.v:57]
+WARNING: [Synth 8-6896] loop limit (65536) exceeded inside initial block, initial block items will be ignored [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RICV_tb.v:64]
+WARNING: [Synth 8-4446] all outputs are unconnected for this instance and logic may be removed [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RICV_tb.v:30]
+INFO: [Synth 8-6157] synthesizing module 'RISCV_top' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RISCV_top.v:23]
+INFO: [Synth 8-6157] synthesizing module 'instruction_mem' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/instruction_mem.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'instruction_mem' (1#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/instruction_mem.v:12]
+INFO: [Synth 8-6157] synthesizing module 'program_counter' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/program_counter.v:12]
+INFO: [Synth 8-6155] done synthesizing module 'program_counter' (2#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/program_counter.v:12]
+INFO: [Synth 8-6157] synthesizing module 'register_memory' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/register_memory.v:16]
+INFO: [Synth 8-6155] done synthesizing module 'register_memory' (3#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/register_memory.v:16]
+INFO: [Synth 8-6157] synthesizing module 'immediate_data_gen' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/immediate_data_gen.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'immediate_data_gen' (4#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/immediate_data_gen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU_control_gen' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU_control_gen.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU_control_gen' (5#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU_control_gen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'control_unit' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/control_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'control_unit' (6#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/control_unit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux_2' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/mux_2.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux_2' (7#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/mux_2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:23]
+WARNING: [Synth 8-6014] Unused sequential element temp_reg was removed.  [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:99]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (8#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'data_mem' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/data_mem.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/data_mem.v:65]
+INFO: [Synth 8-155] case statement is not full and has no default [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/data_mem.v:95]
+INFO: [Synth 8-6155] done synthesizing module 'data_mem' (9#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/data_mem.v:23]
+INFO: [Synth 8-6157] synthesizing module 'mux_4' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/mux_4.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'mux_4' (10#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/mux_4.v:23]
+INFO: [Synth 8-6157] synthesizing module 'pc_update' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/pc_update.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'pc_update' (11#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/pc_update.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Adder_4' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/Adder_4.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Adder_4' (12#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/Adder_4.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RISCV_top' (13#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RISCV_top.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RICV_tb' (14#1) [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RICV_tb.v:23]
+WARNING: [Synth 8-7129] Port MEM_clk in module Adder_4 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[31] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[30] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[29] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[28] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[27] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[26] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[25] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[24] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[23] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[22] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[21] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[20] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[19] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[18] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[17] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[16] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[15] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[14] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[13] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[12] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[11] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[10] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_clk in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[31] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[29] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[28] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[27] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[26] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[25] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[24] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[23] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[22] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[21] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[20] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[19] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[18] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[17] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[16] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[15] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[11] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[10] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[9] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[8] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction[7] in module ALU_control_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_in[6] in module immediate_data_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_in[5] in module immediate_data_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_in[4] in module immediate_data_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_in[3] in module immediate_data_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_in[2] in module immediate_data_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_in[1] in module immediate_data_gen is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_in[0] in module immediate_data_gen is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg484-1
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z020clg484-1
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:14 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-3971] The signal "register_memory:/reg_ram_reg" was recognized as a true dual port RAM template.
+WARNING: [Synth 8-327] inferring latch for variable 'out_reg' [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/mux_4.v:35]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:11 ; elapsed = 00:00:15 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 4     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input   31 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 8     
+	                1 Bit    Registers := 3     
++---RAMs : 
+	               6K Bit	(200 X 32 bit)          RAMs := 1     
+	             1024 Bit	(32 X 32 bit)          RAMs := 1     
++---Muxes : 
+	  42 Input   32 Bit        Muxes := 1     
+	   8 Input   32 Bit        Muxes := 1     
+	   2 Input   32 Bit        Muxes := 1     
+	  11 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 5     
+	   3 Input   32 Bit        Muxes := 1     
+	  35 Input   16 Bit        Muxes := 1     
+	   2 Input   10 Bit        Muxes := 1     
+	  19 Input    5 Bit        Muxes := 1     
+	  19 Input    4 Bit        Muxes := 1     
+	  19 Input    1 Bit        Muxes := 3     
+	   4 Input    1 Bit        Muxes := 2     
+	   3 Input    1 Bit        Muxes := 2     
+	   5 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port data_address[31] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[30] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[29] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[28] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[27] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[26] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[25] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[24] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[23] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[22] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[21] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[20] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[19] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[18] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[17] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[16] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[15] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[14] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[13] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[12] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[11] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data_address[10] in module data_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ID_clk in module control_unit is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[29] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[28] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[27] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[26] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[25] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[24] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[23] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[22] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[21] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[20] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[19] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[18] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[17] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[16] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[15] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[14] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[13] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[12] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[11] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[10] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[9] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[8] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[7] in module instruction_mem is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instruction_address[6] in module instruction_mem is either unconnected or has no load
+INFO: [Synth 8-3971] The signal "RICV_tb/dut/reg_memory/reg_ram_reg" was recognized as a true dual port RAM template.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[31]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[30]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[29]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[28]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[27]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[26]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[25]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[24]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[23]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[22]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[21]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[20]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[19]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[18]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[17]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[16]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[15]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[14]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[13]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[12]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[11]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[10]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[9]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[8]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[7]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[6]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[5]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[4]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[3]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[2]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[1]) is unused and will be removed from module RICV_tb.
+WARNING: [Synth 8-3332] Sequential element (dut/mux4/out_reg[0]) is unused and will be removed from module RICV_tb.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:22 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+ROM: Preliminary Mapping Report
++------------+------------+---------------+----------------+
+|Module Name | RTL Object | Depth x Width | Implemented As | 
++------------+------------+---------------+----------------+
+|ALU         | out        | 32x1          | LUT            | 
+|ALU         | out        | 32x1          | LUT            | 
++------------+------------+---------------+----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:14 ; elapsed = 00:00:22 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:14 ; elapsed = 00:00:22 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++-+-----+------+
+| |Cell |Count |
++-+-----+------+
++-+-----+------+
+
+Report Instance Areas: 
++------+---------+-------+------+
+|      |Instance |Module |Cells |
++------+---------+-------+------+
+|1     |top      |       |     0|
++------+---------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1255.715 ; gain = 0.000
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 140 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1255.715 ; gain = 0.000
+Synthesis Optimization Complete : Time (s): cpu = 00:00:17 ; elapsed = 00:00:25 . Memory (MB): peak = 1255.715 ; gain = 0.000
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1255.715 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1255.715 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: fb70ce44
+INFO: [Common 17-83] Releasing license: Synthesis
+42 Infos, 140 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:18 ; elapsed = 00:00:39 . Memory (MB): peak = 1255.715 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.runs/synth_1/RICV_tb.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file RICV_tb_utilization_synth.rpt -pb RICV_tb_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Fri Feb 10 02:21:19 2023...

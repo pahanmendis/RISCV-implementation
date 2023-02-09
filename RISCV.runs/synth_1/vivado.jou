@@ -1,0 +1,13 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Fri Feb 10 02:20:35 2023
+# Process ID: 22392
+# Current directory: C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.runs/synth_1
+# Command line: vivado.exe -log RICV_tb.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RICV_tb.tcl
+# Log file: C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.runs/synth_1/RICV_tb.vds
+# Journal file: C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.runs/synth_1\vivado.jou
+# Running On: Asus-Skye, OS: Windows, CPU Frequency: 3294 MHz, CPU Physical cores: 16, Host memory: 33720 MB
+#-----------------------------------------------------------
+source RICV_tb.tcl -notrace

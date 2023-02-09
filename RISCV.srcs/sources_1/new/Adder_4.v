@@ -1,36 +1,26 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 01/27/2023 01:00:33 AM
-// Design Name: 
-// Module Name: Adder_4
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+/*
+The adder of 4 units module, triggered by the positive edge of the MEM clock
+Functions:  A adder of 4 units where needed
+Inputs:     The current program counter 
+            The branching control signal 
+Outputs:    The updated PC, 4 added for only the instructions needed
+*/ 
 //////////////////////////////////////////////////////////////////////////////////
 
 
 module Adder_4(
     input MEM_clk,
-    input [31:0] pc_in,   // define proper bus widths
+    input [31:0] pc_in,   
     input [1:0] branch,
     output reg [31:0] pc_add_4
     );
     
-    always@(posedge MEM_clk)
+    always@(*)
         begin
         if (branch == 2'b01 || branch == 2'b10)
-            pc_add_4 <= pc_in + 32'd4; // **check if we need to include overflow failsafes
+            pc_add_4 <= pc_in + 32'd4; 
         else
             pc_add_4 <= pc_in;
         end

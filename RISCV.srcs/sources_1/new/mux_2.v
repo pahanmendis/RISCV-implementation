@@ -1,28 +1,18 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 01/31/2023 08:35:05 PM
-// Design Name: 
-// Module Name: mux_2
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+/*
+The 2-input multiplexer module, continuous assignmet
+Functions:  Selects one of two input according to a control signal
+Inputs:     2 inputs A, B 
+            selection bit
+Outputs:    The selected output
+*/ 
 //////////////////////////////////////////////////////////////////////////////////
 
 
 module mux_2(
-    input [31:0] A, //output value if sel=0
-    input [31:0] B, //output value if sel=1
+    input [31:0] A, // output value if sel = 1
+    input [31:0] B, // output value if sel = 0
     input sel,
     output reg [31:0] out
     );

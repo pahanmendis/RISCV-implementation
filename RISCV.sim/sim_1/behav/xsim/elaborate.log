@@ -4,7 +4,6 @@ Running: D:/Programs/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debu
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-5021] port 'MEM_clk' is not connected on this instance [C:/Users/Chathuni/Documents/GitHub/RISCV-implementation/RISCV.srcs/sources_1/new/RISCV_top.v:73]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

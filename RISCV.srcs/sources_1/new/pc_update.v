@@ -1,22 +1,14 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 02/02/2023 09:18:40 AM
-// Design Name: 
-// Module Name: pc_update
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+/*
+The PC update module, triggered by the positive edge of the MEM clock
+Functions:  Updates the PC according to various branching instructions
+Inputs:     Current program counter 
+            Immediate data from instruction 
+            ALU output 
+            Control signals on how to update the PC, including the flags
+Outputs:    The updated PC
+*/ 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -46,7 +38,7 @@ module pc_update(
                 pc_update_out <= program_counter + c_bus;
             5'b11100:
                 pc_update_out <= program_counter + immediate_data;
-            5'b11011:
+            5'b10011:
                 pc_update_out <= program_counter + immediate_data;
             5'b11001:
                 pc_update_out <= program_counter + immediate_data;

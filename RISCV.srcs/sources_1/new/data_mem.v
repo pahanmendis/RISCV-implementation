@@ -1,22 +1,13 @@
 `timescale 1ns / 1ps
 //////////////////////////////////////////////////////////////////////////////////
-// Company: 
-// Engineer: 
-// 
-// Create Date: 01/27/2023 12:16:04 AM
-// Design Name: 
-// Module Name: data_mem
-// Project Name: 
-// Target Devices: 
-// Tool Versions: 
-// Description: 
-// 
-// Dependencies: 
-// 
-// Revision:
-// Revision 0.01 - File Created
-// Additional Comments:
-// 
+/*
+The data memory module, triggered by the positive edge of the MEM clock
+Functions:  Load and store values to and from the data memory from and to the ALU
+Inputs:     32-bit write data 
+            32-bit data memory address 
+            Control signals for data read and write
+Outputs:    The data read from the memory
+*/ 
 //////////////////////////////////////////////////////////////////////////////////
 
 
@@ -63,9 +54,11 @@ module data_mem(
         else if (mem_read==2'b10) // halfword
             begin
                 case (block_address)
-                2'd0:
+                2'd1:
                     read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][15:0]};
                 2'd2:
+                    read_data<={{8{data_ram[line_address][15]}},data_ram[line_address][15:0], 8'b0};
+                2'd3:
                     read_data<={{16{data_ram[line_address][31]}},data_ram[line_address][31:16]};
                 endcase
             end
@@ -91,9 +84,11 @@ module data_mem(
             
         else if (mem_write==2'b10)      // half-word
             case (block_address)
-            2'd0:
+            2'd1:
                 data_ram[line_address] <= {data_ram[line_address][31:16], write_data[15:0]};
             2'd2:
+                data_ram[line_address] <= {data_ram[line_address][31:24], write_data[15:0], data_ram[line_address][7:0]};
+            2'd3:
                 data_ram[line_address] <= {write_data[15:0], data_ram[line_address][15:0]};
             endcase
         

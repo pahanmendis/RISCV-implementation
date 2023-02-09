@@ -33,35 +33,35 @@ module RICV_tb(    );
     initial 
         begin
         IF_clk = 1'b0;
-        forever #100 IF_clk = ~IF_clk;
+        forever #10 IF_clk = ~IF_clk;
         end
         
     initial 
         begin
         ID_clk = 1'b0;
-        #25
-        forever #100 ID_clk = ~ID_clk;
+        #4
+        forever #10 ID_clk = ~ID_clk;
         end
         
     initial 
         begin
         EX_clk = 1'b0;
-        #50
-        forever #100 EX_clk = ~EX_clk;
+        #8
+        forever #10 EX_clk = ~EX_clk;
         end
         
     initial 
         begin
         MEM_clk = 1'b0;
-        #75
-        forever #100 MEM_clk = ~MEM_clk;
+        #12
+        forever #10 MEM_clk = ~MEM_clk;
         end   
         
     initial 
         begin
         WB_clk = 1'b0;
-        #100
-        forever #100 WB_clk = ~WB_clk;
+        #16
+        forever #10 WB_clk = ~WB_clk;
         end
 
 endmodule
