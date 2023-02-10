@@ -49,7 +49,9 @@ wire [1:0] mem_read;
 wire [1:0] mem_write;
 wire reg_write;  
     
-instruction_mem intruction_memory   (    .IF_clk(IF_clk),    .instruction_address(program_counter[31:2]),    .instruction(instruction)    );  
+instruction_mem intruction_memory   (    .IF_clk(IF_clk),    .instruction_address(program_counter[31:2]),    .instruction(instruction)    );
+
+data_mem            data_memory     (   .MEM_clk(MEM_clk),  .mem_write(mem_write),    .mem_read(mem_read),    .data_address(C_bus),    .write_data(rs2_data),    .read_data(read_data)  );  
 
 program_counter     pc              (    .WB_clk(WB_clk),    .pc_input(pc_update_out),    .pc_output(program_counter)    );
 
@@ -66,7 +68,7 @@ mux_2               mux2            (    .A(rs2_data), .B(immediate_data),     .
 
 ALU                 ALU1            (   .EX_clk(EX_clk),    .A(rs1_data),    .B(B_bus),    .ALU_op(ALU_op),    .z_flag(z_flag),    .p_flag(p_flag),    .n_flag(n_flag),    .out(C_bus)    );
 
-data_mem            data_memory     (   .MEM_clk(MEM_clk),  .mem_write(mem_write),    .mem_read(mem_read),    .data_address(C_bus),    .write_data(rs2_data),    .read_data(read_data)  );
+
 
 mux_4               mux4            (    .A(immediate_data),     .B(C_bus),     .C(read_data),     .D(pc_add4),     .sel(to_reg),   .out(write_data)    );         
 
