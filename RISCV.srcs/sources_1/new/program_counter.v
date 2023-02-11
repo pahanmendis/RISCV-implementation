@@ -10,9 +10,10 @@ Outputs:    32-bit program counter
 
 
 module program_counter(
-    input WB_clk,
+    input en,
     input [31:0] pc_input,
-    output reg [31:0] pc_output
+    output reg [31:0] pc_output,
+    output reg pc_ready
     );
     
     // set default PC to 0 at the start
@@ -21,8 +22,10 @@ module program_counter(
         pc_output<=32'd0;
     end
     
-    always @(posedge WB_clk)
+    always @(posedge en)
         begin
-        pc_output <= pc_input;  // passes the PC to the output
+            pc_ready <= 1'b0;
+            pc_output <= pc_input;  // passes the PC to the output
+            pc_ready <= 1'b1;
         end
 endmodule

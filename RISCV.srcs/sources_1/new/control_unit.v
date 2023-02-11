@@ -11,7 +11,7 @@ Outputs:    The control signals
 
 
 module control_unit(
-    input ID_clk,
+    input en,
     input [6:0] opcode,
     input [2:0] func3,
     output [2:0] im_slice,
@@ -21,7 +21,8 @@ module control_unit(
     output [2:0] to_reg,
     output [1:0] mem_read,
     output [1:0] mem_write,
-    output reg_write
+    output reg_write,
+    output reg cu_ready
     );
     
     // write control unit
@@ -69,12 +70,14 @@ module control_unit(
     
     end
     
-    always @(*)
+    always @(en)
     begin
+        cu_ready <= 1'b0;
         if (opcode == 7'd55 || opcode == 7'd23 || opcode == 7'd111) // For LUI, AUIPC, JAL which don't have func3
             control_out <= control_store[{3'b0,opcode}];
         else
             control_out <= control_store[{func3,opcode}]; // index in the control store is {func3, opcode}
+        cu_ready <= 1'b1;
     end
     
     // slicing the control signals into individual lines

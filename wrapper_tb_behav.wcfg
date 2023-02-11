@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="wrapper_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="wrapper_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="691.500 ns"></ZoomStartTime>
+      <ZoomEndTime time="737.004 ns"></ZoomEndTime>
+      <Cursor1Time time="722.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="284"></NameColumnWidth>
+      <ValueColumnWidth column_width="161"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="18" />
+   <wvobject fp_name="/wrapper_tb/IF_clk" type="logic">
+      <obj_property name="ElementShortName">IF_clk</obj_property>
+      <obj_property name="ObjectShortName">IF_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/ID_clk" type="logic">
+      <obj_property name="ElementShortName">ID_clk</obj_property>
+      <obj_property name="ObjectShortName">ID_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/EX_clk" type="logic">
+      <obj_property name="ElementShortName">EX_clk</obj_property>
+      <obj_property name="ObjectShortName">EX_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/MEM_clk" type="logic">
+      <obj_property name="ElementShortName">MEM_clk</obj_property>
+      <obj_property name="ObjectShortName">MEM_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/WB_clk" type="logic">
+      <obj_property name="ElementShortName">WB_clk</obj_property>
+      <obj_property name="ObjectShortName">WB_clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/program_counter_ext" type="array">
+      <obj_property name="ElementShortName">program_counter_ext[29:0]</obj_property>
+      <obj_property name="ObjectShortName">program_counter_ext[29:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/instruction" type="array">
+      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/C_bus_ext" type="array">
+      <obj_property name="ElementShortName">C_bus_ext[31:0]</obj_property>
+      <obj_property name="ObjectShortName">C_bus_ext[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/rs2_ext" type="array">
+      <obj_property name="ElementShortName">rs2_ext[31:0]</obj_property>
+      <obj_property name="ObjectShortName">rs2_ext[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/read_data" type="array">
+      <obj_property name="ElementShortName">read_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">read_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/mem_write" type="array">
+      <obj_property name="ElementShortName">mem_write[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_write[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/mem_read" type="array">
+      <obj_property name="ElementShortName">mem_read[1:0]</obj_property>
+      <obj_property name="ObjectShortName">mem_read[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/intruction_memory/instruction_address" type="array">
+      <obj_property name="ElementShortName">instruction_address[29:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction_address[29:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/intruction_memory/instruction" type="array">
+      <obj_property name="ElementShortName">instruction[31:0]</obj_property>
+      <obj_property name="ObjectShortName">instruction[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/data_memory/data_ram[0]" type="array">
+      <obj_property name="ElementShortName">[0][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[0][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/data_memory/data_ram[1]" type="array">
+      <obj_property name="ElementShortName">[1][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[1][31:0]</obj_property>
+      <obj_property name="Radix">BINARYRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/data_memory/data_ram[2]" type="array">
+      <obj_property name="ElementShortName">[2][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/wrapper_tb/proc_inst/reg_memory/reg_ram[5]" type="array">
+      <obj_property name="ElementShortName">[5][31:0]</obj_property>
+      <obj_property name="ObjectShortName">[5][31:0]</obj_property>
+   </wvobject>
+</wave_config>

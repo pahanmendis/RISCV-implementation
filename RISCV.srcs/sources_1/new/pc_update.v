@@ -13,7 +13,7 @@ Outputs:    The updated PC
 
 
 module pc_update(
-    input MEM_clk,
+    input en,
     input [31:0] program_counter,
     input [31:0] immediate_data,
     input [31:0] c_bus,
@@ -21,7 +21,8 @@ module pc_update(
     input [1:0] branch,
     input  z_flag,
     input p_flag,
-    input n_flag
+    input n_flag,
+    output reg pc_update_ready
     );
     
     initial
@@ -29,13 +30,14 @@ module pc_update(
         pc_update_out <= 32'b0;
     end
     
-     always @(posedge MEM_clk)
+     always @(posedge en)
         begin
+            pc_update_ready <= 1'b0;
             casez ({branch,z_flag, p_flag, n_flag})
             5'b01000:
                 pc_update_out <= program_counter + immediate_data;
             5'b10000:
-                pc_update_out <= program_counter + c_bus;
+                pc_update_out <= c_bus;
             5'b11100:
                 pc_update_out <= program_counter + immediate_data;
             5'b10011:
@@ -50,7 +52,7 @@ module pc_update(
             default:
                 pc_update_out <= program_counter + 32'd4;
             endcase
-                
+            pc_update_ready <= 1'b1;  
         end
     
 endmodule

@@ -34,7 +34,7 @@ module wrapper_tb(
 
     //RISCV_processor dut (.IF_clk(IF_clk), .ID_clk(ID_clk), .EX_clk(EX_clk), .MEM_clk(MEM_clk), .WB_clk(WB_clk));
     RISCV_processor proc_inst(    .IF_clk(IF_clk), .ID_clk(ID_clk), .EX_clk(EX_clk), .MEM_clk(MEM_clk), .WB_clk(WB_clk),    .program_counter_external(program_counter_ext),    .instruction(instruction),    .mem_write(mem_write),    
-    .mem_read(mem_write),       .C_bus_external(C_bus_ext),      .rs2_data_external(rs2_ext),       .read_data(read_data)     );
+    .mem_read(mem_read),       .C_bus_external(C_bus_ext),      .rs2_data_external(rs2_ext),       .read_data(read_data)     );
     
     
     instruction_mem intruction_memory   (    .IF_clk(IF_clk),    .instruction_address(program_counter_ext),    .instruction(instruction)    );
