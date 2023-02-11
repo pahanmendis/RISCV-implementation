@@ -54,11 +54,11 @@ module data_mem(
         else if (mem_read==2'b10) // halfword
             begin
                 case (block_address)
-                2'd1:
+                2'd0:
                     read_data<={{16{data_ram[line_address][15]}},data_ram[line_address][15:0]};
-                2'd2:
+                2'd1:
                     read_data<={{8{data_ram[line_address][15]}},data_ram[line_address][15:0], 8'b0};
-                2'd3:
+                2'd2:
                     read_data<={{16{data_ram[line_address][31]}},data_ram[line_address][31:16]};
                 endcase
             end
@@ -84,11 +84,11 @@ module data_mem(
             
         else if (mem_write==2'b10)      // half-word
             case (block_address)
-            2'd1:
+            2'd0:
                 data_ram[line_address] <= {data_ram[line_address][31:16], write_data[15:0]};
-            2'd2:
+            2'd1:
                 data_ram[line_address] <= {data_ram[line_address][31:24], write_data[15:0], data_ram[line_address][7:0]};
-            2'd3:
+            2'd2:
                 data_ram[line_address] <= {write_data[15:0], data_ram[line_address][15:0]};
             endcase
         

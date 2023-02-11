@@ -19,7 +19,7 @@ module Adder_4(
     
     always@(*)
         begin
-        if (branch == 2'b01 || branch == 2'b10)
+        if (/*branch == 2'b01 ||8*/ branch == 2'b10)
             pc_add_4 <= pc_in + 32'd4; 
         else
             pc_add_4 <= pc_in;
