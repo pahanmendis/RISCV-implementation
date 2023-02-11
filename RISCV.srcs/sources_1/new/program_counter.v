@@ -13,7 +13,7 @@ module program_counter(
     input en,
     input [31:0] pc_input,
     output reg [31:0] pc_output,
-    output pc_ready
+    output reg pc_ready
     );
     
     // set default PC to 0 at the start

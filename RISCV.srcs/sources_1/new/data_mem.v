@@ -18,8 +18,8 @@ module data_mem(
     input [31:0] data_address,
     input [31:0] write_data,
     output reg [31:0] read_data,
-    output dmem_r_ready,
-    output dmem_w_ready
+    output reg dmem_r_ready,
+    output reg dmem_w_ready
     );
     parameter mem_depth = 199; //depth-1
     reg [31:0] data_ram [mem_depth:0];
@@ -72,7 +72,7 @@ module data_mem(
         dmem_r_ready <= 1'b1;        
         end
 
-    always@(posedge en)    //output data
+    always@(posedge MEM_clk)    //output data
         begin
         dmem_w_ready <= 1'b0;
         if (mem_write == 2'b01)      // byte

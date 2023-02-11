@@ -22,7 +22,7 @@ module control_unit(
     output [1:0] mem_read,
     output [1:0] mem_write,
     output reg_write,
-    output cu_ready
+    output reg cu_ready
     );
     
     // write control unit

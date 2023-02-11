@@ -37,7 +37,7 @@ module RISCV_processor(
     output [31:0] rs2_data_external,    
     input [31:0] read_data,
     input mem_r_ready,
-    input mem_w_ready,
+    input mem_w_ready
     );
     
 //wire declarations  
@@ -76,11 +76,11 @@ assign rs2_data_external = rs2_data;
 assign program_counter_external = program_counter[31:2];
 assign C_bus_external = C_bus;
 
-always @(pc_ready or cu_ready or reg_mem_ready or im_gen_ready or alu_ready or pc_update_ready)
-begin
-    case (state) // define state
-    3'b000: // IF 
-    begin 
+//always @(pc_ready or cu_ready or reg_mem_ready or im_gen_ready or alu_ready or pc_update_ready)
+//begin
+//    case (state) // define state
+//    3'b000: // IF 
+//    begin 
         
 
 program_counter     pc              (    .en(en_wb),    .pc_input(pc_update_out),    .pc_output(program_counter), .pc_ready(pc_ready)    );
