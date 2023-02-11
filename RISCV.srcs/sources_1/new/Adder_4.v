@@ -11,7 +11,6 @@ Outputs:    The updated PC, 4 added for only the instructions needed
 
 
 module Adder_4(
-    input MEM_clk,
     input [31:0] pc_in,   
     input [1:0] branch,
     output reg [31:0] pc_add_4

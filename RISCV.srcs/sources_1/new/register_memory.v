@@ -14,15 +14,16 @@ Outputs:    The data from the register file, sent to the next stage, the ALU
 
 
 module register_memory(
-    input ID_clk,
-    input WB_clk,
+    input en_id,
+    input en_wb,
     input reg_write,
     input [4:0] rs1_addr,
     input [4:0] rs2_addr,
     input [4:0] rd_addr,
     input [31:0] write_data,
     output reg [31:0] rs1_data,
-    output reg [31:0] rs2_data
+    output reg [31:0] rs2_data,
+    output reg reg_mem_ready
     );
     
     parameter reg_count = 31; // number of registers - 1
@@ -35,18 +36,22 @@ module register_memory(
     end
     
     // output reg data to the output buses to send to the ALU
-    always @(posedge ID_clk)    
+    always @(posedge en_id)    
         begin
+            reg_mem_ready <= 1'b0;
             rs1_data<=reg_ram[rs1_addr];
             rs2_data<=reg_ram[rs2_addr];  
+            reg_mem_ready <= 1'b1;
         end
     
     // write the data to the destination register
-    always @(posedge WB_clk)
+    always @(posedge en_wb)
         begin
+            reg_mem_ready <= 1'b0;
             if(reg_write==1'b1)    
                 begin
                     reg_ram[rd_addr] <= write_data;
                 end
+            reg_mem_ready <= 1'b1;
         end
 endmodule

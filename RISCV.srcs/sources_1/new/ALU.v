@@ -12,14 +12,15 @@ Outputs:    The computed output
 
 
 module ALU(
-    input EX_clk,
+    input en,
     input [31:0] A,
     input [31:0] B,
     input [4:0] ALU_op,
     output reg z_flag,
     output reg p_flag,
     output reg n_flag,
-    output reg [31:0] out
+    output reg [31:0] out,
+    output reg alu_ready
     );
     
     // define the control signal pattern as parameters
@@ -54,8 +55,9 @@ module ALU(
         end
     
     // writing ALU functions
-    always @(posedge EX_clk) 
+    always @(posedge en) 
     begin
+        alu_ready <= 1'b0;
         case(ALU_op)
         ADDITION:
         begin
@@ -263,7 +265,8 @@ module ALU(
             n_flag = 1'b0;
         end
             
-        endcase       
+        endcase   
+        alu_ready <= 1'b1;    
     end    
 
 endmodule

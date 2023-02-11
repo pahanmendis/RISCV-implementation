@@ -10,17 +10,20 @@ Outputs:    32-bitinstruction
 
 
 module instruction_mem(
-    input IF_clk,
+    input clk,
     input [29:0] instruction_address,   // 30-bit wide, the 2 LSB of the 32-bit address are ignored
-    output reg [31:0] instruction       
+    output reg [31:0] instruction_out,
+    output reg ins_ready       
     );
     
     parameter instruction_count = 200;         // number of instructions
     reg [31:0] instruction_rom [instruction_count:0]; // creating memory  
        
-    always @(posedge IF_clk)
+    always @(posedge clk)
         begin
-         instruction <= instruction_rom[instruction_address]; 
+         ins_ready <= 1'b0;
+         instruction_out <= instruction_rom[instruction_address];  // output the instruction 
+         ins_ready <= 1'b1;
         end
         
     initial 

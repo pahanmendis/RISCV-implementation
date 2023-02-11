@@ -17,7 +17,9 @@ module data_mem(
     input [1:0] mem_read,
     input [31:0] data_address,
     input [31:0] write_data,
-    output reg [31:0] read_data
+    output reg [31:0] read_data,
+    output dmem_r_ready,
+    output dmem_w_ready
     );
     parameter mem_depth = 199; //depth-1
     reg [31:0] data_ram [mem_depth:0];
@@ -38,6 +40,7 @@ module data_mem(
     
     always@(posedge MEM_clk)                    //output data
         begin
+        dmem_r_ready <= 1'b0;
         if (mem_read==2'b01) // byte
             begin
                 case (block_address)
@@ -65,11 +68,13 @@ module data_mem(
         else if (mem_read==2'b11)
             read_data<=data_ram[line_address];  
         else 
-            read_data<=32'b0;          
+            read_data<=32'b0;  
+        dmem_r_ready <= 1'b1;        
         end
 
-    always@(posedge MEM_clk)    //output data
+    always@(posedge en)    //output data
         begin
+        dmem_w_ready <= 1'b0;
         if (mem_write == 2'b01)      // byte
             case (block_address)
             2'd0:
@@ -94,7 +99,7 @@ module data_mem(
         
         else if (mem_write==2'b11)      // word
             data_ram[line_address]<=write_data;
-            
+        dmem_w_ready <= 1'b1;
         end
     
 endmodule
