@@ -35,7 +35,7 @@ module pc_update(
             5'b01000:
                 pc_update_out <= program_counter + immediate_data;
             5'b10000:
-                pc_update_out <= program_counter + c_bus;
+                pc_update_out <= c_bus;
             5'b11100:
                 pc_update_out <= program_counter + immediate_data;
             5'b10011:

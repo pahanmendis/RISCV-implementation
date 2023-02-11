@@ -41,7 +41,7 @@ module instruction_mem(
             instruction_rom[11] = 32'b0000000_00000_00101_000_00100_1100011;    // beq x5,x0,8    # if x5 == x0 jump 2 steps
             instruction_rom[12] = 32'b000000000001_00101_000_00101_0010011;     // addi x5,x5,1    # x5 = x5 + 1
             instruction_rom[13] = 32'b000000000010_00101_000_00101_0010011;     // addi x5,x5,2    # x5 = x5 + 2
-          instruction_rom[14] = 32'b0000000_00000_00101_001_00100_1100011;    // bne x5,x0,8     # if x5 != x0 jump 2 steps
+            instruction_rom[14] = 32'b0000000_00000_00101_001_00100_1100011;    // bne x5,x0,8     # if x5 != x0 jump 2 steps
             instruction_rom[15] = 32'b000000000110_00101_000_00101_0010011;     // addi x5,x5,6    # x5 = x5 + 6
             instruction_rom[16] = 32'b000000000001_00110_000_00110_0010011;     // addi x6,x6,1    # x6 = x6 + 1
             instruction_rom[17] = 32'b0000000_00110_00101_101_00100_1100011;    // bge x5,x6,8     # if x5 >= x6 go to line 20
